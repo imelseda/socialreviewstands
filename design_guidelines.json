@@ -1,0 +1,106 @@
+{
+  "theme": "light",
+  "design_context": "Marketing / E-commerce Landing Page",
+  "typography": {
+    "primary_heading_font": "Cabinet Grotesk",
+    "secondary_body_font": "Satoshi",
+    "rules": [
+      "DO NOT use Inter, Roboto, or Open Sans for headings.",
+      "Headings (H1/H2) MUST use tight letter spacing: `tracking-tight` or `tracking-tighter`.",
+      "Overlines and small labels MUST be uppercase with wide spacing: `tracking-[0.2em]`.",
+      "H1 size ceiling is `text-6xl` on largest breakpoints. DO NOT use `text-8xl` or `text-9xl` for heroes.",
+      "Keep body text clean, readable, and left-aligned unless centralized for a specific balanced component."
+    ]
+  },
+  "colors": {
+    "archetype": "Swiss & High-Contrast mixed with Organic Trust",
+    "background": "#F9F9F7",
+    "text_primary": "#121212",
+    "text_secondary": "#525252",
+    "brand_primary": "#4285F4",
+    "brand_primary_hover": "#2B6CDA",
+    "surface_card": "#FFFFFF",
+    "border": "#E5E5E5",
+    "rules": [
+      "Never use pure black (#000000) or pure white (#FFFFFF) for the main background. Use the tinted off-white #F9F9F7 to feel organic and premium.",
+      "Use #4285F4 (Google Blue equivalent) strategically for primary CTAs to leverage inherent brand trust.",
+      "Ensure text contrast ratios meet or exceed WCAG AA (4.5:1 for normal text).",
+      "ALWAYS explicitly set text color on hover states (e.g., `hover:bg-gray-900 hover:text-white`)."
+    ]
+  },
+  "layouts": {
+    "spacing_system": "Generous Spacing (Tailwind Scale)",
+    "rules": [
+      "Use generous spacing: `py-20`, `py-24`, or `py-32` for main section padding.",
+      "Containers with borders must have internal padding (`p-6`, `p-8`, or `p-12`) to prevent text collision.",
+      "Bento Grid for Features/How it Works: Use asymmetrical grid logic. Never fill 100% of the grid perfectly symmetrically. Mix tall, wide, and square cards.",
+      "Hero section MUST have max overlay opacity of `bg-black/30` if using background images, to let the image breathe.",
+      "Product images must not exceed 80vh on mobile to prevent blocking scroll."
+    ]
+  },
+  "visual_enhancers": {
+    "surfaces": [
+      "Crystal Glassmorphism for sticky header: `bg-white/70 backdrop-blur-xl border-b border-white/40 shadow-sm`.",
+      "Cards (Neumorphism/Flat): Flat solid surface `#FFFFFF` with crisp 1px border (`border-[#E5E5E5]`) and NO heavy shadow. Use subtle `-translate-y-1` and `shadow-lg` on hover."
+    ],
+    "textures": "Subtle noise overlay on the hero section background to break digital flatness.",
+    "icons": "Use `lucide-react` for standard UI icons. Keep stroke width consistent."
+  },
+  "motion": {
+    "libraries": [
+      "framer-motion",
+      "lenis (for smooth scrolling momentum)"
+    ],
+    "rules": [
+      "Implement staggered entrance animations for the Bento grid features.",
+      "Hover states for all interactive elements (buttons, product cards).",
+      "DO NOT use `transition: all`. Specify exact properties (e.g., `transition: transform 0.2s ease, opacity 0.2s ease`).",
+      "Respect `prefers-reduced-motion`."
+    ]
+  },
+  "component_instructions": {
+    "hero_section": "Split layout or massive center stage. Focus on the 'Tap/Scan' interaction story.",
+    "product_gallery": "Interactive gallery showing the 4 variants (Style A Black/White, Style B Black/White) and lifestyle photos.",
+    "variant_selector": "Custom radio group with visual swatches for Style A/B and Black/White. Must update the main product image when selected.",
+    "how_it_works": "3-step visual bento layout (Tap/Scan -> Leave Review -> Grow Reputation).",
+    "customer_reviews": "Masonry or horizontal scrolling marquee of reviews from massage/beauty/cafe owners.",
+    "forms": "Use Shadcn `Form`, `Input`, `Select`, `Button` for the Order/Enquiry section. Strip default styling to match the premium flat aesthetic.",
+    "faq": "Use Shadcn `Accordion` for clean, collapsible Q&A.",
+    "navigation": "Sticky glassmorphic header with Logo, 3-4 anchors (Features, How it Works, Reviews, Specs), and a prominent 'Order Now' CTA."
+  },
+  "image_urls": {
+    "lifestyle_tapping": {
+      "url": "https://images.unsplash.com/photo-1593733925160-6f78dc0be8b6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjB0YXBwaW5nJTIwcGhvbmUlMjBORkN8ZW58MHx8fHwxNzg4MjAwMjE4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Person tapping a white smartphone, use for 'How it Works' or Hero context."
+    },
+    "lifestyle_cafe": {
+      "url": "https://images.unsplash.com/photo-1787551415595-40cf928e1b08?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwyfHxjYWZlJTIwY291bnRlciUyMFBPU3xlbnwwfHx8fDE3ODgyMDAyMTh8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Tablet POS with pastries on counter. Use for 'Target Audience / Small Business' section."
+    },
+    "product_placeholders": [
+      "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjB0YXBwaW5nJTIwcGhvbmUlMjBORkN8ZW58MHx8fHwxNzg4MjAwMjE4fDA&ixlib=rb-4.1.0&q=85"
+    ],
+    "instruction": "The user mentioned providing 4 product photos (white stand, white stand on cafe table, black stand with dimensions, black stand on office desk). If local files are not accessible in the project repo, map these generic URLs as fallbacks or structure the `src` paths assuming they will be dropped in `public/images/`. DO NOT USE generic placeholder text or services like via.placeholder.com."
+  },
+  "accessibility": {
+    "rules": [
+      "All interactive and key informational elements MUST include a `data-testid` attribute (e.g., `data-testid=\"order-submit-button\"`).",
+      "Ensure form inputs have clear focus rings (`focus:ring-2 focus:ring-brand_primary`).",
+      "Use `aria-hidden=\"true\"` for purely decorative SVGs/icons."
+    ]
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not converge toward generic 'AI slop' outputs. Use creative bento grids and asymmetric layouts.",
+    "Do not center-align the main app container. Left-align dense text to maintain reading flow.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Implement micro-animations on all interactive elements (hover, focus, tap).",
+    "Use `sonner` for toast notifications (located in `/app/frontend/src/components/ui/sonner.js` or similar).",
+    "Use pre-existing Shadcn components from `src/components/ui` when applicable, but strip rigid Vercel-look borders for this premium e-commerce feel."
+  ],
+  "libraries_to_install": [
+    "lucide-react",
+    "framer-motion",
+    "clsx",
+    "tailwind-merge"
+  ]
+}
