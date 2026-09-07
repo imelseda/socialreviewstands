@@ -55,12 +55,19 @@ export default function Hero() {
           className="relative"
         >
           <div className="rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
-            <img
-              src="/images/stand-phone-review.png"
-              alt="NFC 215 Google review stand next to a phone showing a 5-star Google review page"
-              data-testid="hero-product-image"
+            <video
+              poster="/images/stand-phone-review.png"
+              data-testid="hero-product-video"
               className="w-full max-h-[70vh] object-cover"
-            />
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-label="Demo: customer taps the NFC 215 stand and leaves a Google review in seconds"
+            >
+              <source src="/videos/hero-demo.mp4" type="video/mp4" />
+              <source src="/videos/hero-demo.webm" type="video/webm" />
+            </video>
           </div>
           <div data-testid="hero-tap-badge" className="absolute -left-3 top-10 flex items-center gap-2 rounded-full bg-[#12141C] border border-[#D4AF37]/40 shadow-[0_8px_24px_rgba(0,0,0,0.5)] px-4 py-2 text-xs font-semibold text-[#F3E5AB]">
             <span className="w-7 h-7 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center">

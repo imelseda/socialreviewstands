@@ -34,6 +34,8 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Repo cleaned for GitHub: .env files git-ignored (were untracked but not ignored — secret-leak risk fixed), .env.example templates added, README rewritten with stack/structure/API docs, committed.
 - SEO: title, meta description, keywords, robots, theme-color #0A0B0E, Open Graph + Twitter/X cards. Generated 1200×630 og-cover.png (obsidian + gold, product photo) and gold-star favicon set (favicon.ico/.png, apple-touch-icon) via PIL. Note: og:image is root-relative — make absolute once a custom domain is set.
 
+- Hero media is now a 30s autoplaying demo video (user-uploaded tap4-reviews.mp4 → /videos/hero-demo.mp4, faststart-remuxed so playback starts instantly) with a VP9 WebM fallback and poster image. Note: test-browser Chromium cannot decode H.264; real browsers use the MP4.
+
 ## Backlog
 - P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
 - P1: User to confirm/edit 90-day guarantee claim; email notification on enquiry (Resend); admin view of enquiries
