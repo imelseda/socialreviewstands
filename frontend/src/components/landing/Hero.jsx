@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import { Star, Nfc, QrCode, Ban, Timer, Volume2, VolumeX } from "lucide-react";
+import { Star, Ban, Timer, Volume2, VolumeX } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -91,18 +91,6 @@ export default function Hero() {
               {muted ? <VolumeX size={15} aria-hidden="true" /> : <Volume2 size={15} aria-hidden="true" />}
               {muted ? "Tap for sound" : "Sound on"}
             </button>
-          </div>
-          <div data-testid="hero-tap-badge" className="absolute -left-3 top-10 flex items-center gap-2 rounded-full bg-[#12141C] border border-[#D4AF37]/40 shadow-[0_8px_24px_rgba(0,0,0,0.5)] px-4 py-2 text-xs font-semibold text-[#F3E5AB]">
-            <span className="w-7 h-7 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center">
-              <Nfc size={14} aria-hidden="true" />
-            </span>
-            Tap with NFC
-          </div>
-          <div data-testid="hero-scan-badge" className="absolute -right-3 bottom-12 flex items-center gap-2 rounded-full bg-[#12141C] border border-[#D4AF37]/40 shadow-[0_8px_24px_rgba(0,0,0,0.5)] px-4 py-2 text-xs font-semibold text-[#F3E5AB]">
-            <span className="w-7 h-7 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center">
-              <QrCode size={14} aria-hidden="true" />
-            </span>
-            Scan the QR code
           </div>
         </motion.div>
       </div>
