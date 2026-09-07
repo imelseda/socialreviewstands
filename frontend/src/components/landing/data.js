@@ -1,31 +1,35 @@
 export const VARIANTS = [
   {
-    id: "a-white",
-    name: "Style A · White",
-    image: "/images/stand-white-google.png",
-    swatch: "#FFFFFF",
-    desc: "Clean white face with the classic Google review layout — instant trust on any counter.",
-  },
-  {
     id: "a-black",
-    name: "Style A · Black",
+    name: "Style A · Obsidian Black",
+    short: "Style A · Black",
     image: "/images/stand-black-dims.png",
-    swatch: "#121212",
-    desc: "Bold black finish with high-contrast print that pops on light surfaces.",
+    swatch: "#12141A",
+    desc: "Brushed black metallic finish with a high-contrast gold-ring QR — commands attention on any counter.",
   },
   {
-    id: "b-white",
-    name: "Style B · White",
-    image: "/images/stand-white-cafe.png",
-    swatch: "#FFFFFF",
-    desc: "Minimal 'Tap to leave a review' layout — perfect for cafés, salons and studios.",
+    id: "a-white",
+    name: "Style A · Pearl White",
+    short: "Style A · White",
+    image: "/images/stand-white-google.png",
+    swatch: "#F8F9FA",
+    desc: "Pristine white face with the classic Google review layout — instant familiarity, instant trust.",
   },
   {
     id: "b-black",
-    name: "Style B · Black",
+    name: "Style B · Noir Black",
+    short: "Style B · Black",
     image: "/images/stand-black-tiktok.png",
-    swatch: "#121212",
-    desc: "Stealth black stand, ideal for social-first brands on TikTok and Instagram.",
+    swatch: "#12141A",
+    desc: "Stealth black stand for social-first brands — point it at Google, TikTok, Instagram and more.",
+  },
+  {
+    id: "b-white",
+    name: "Style B · Boutique White",
+    short: "Style B · White",
+    image: "/images/stand-white-cafe.png",
+    swatch: "#F8F9FA",
+    desc: "Minimal 'Tap to leave a review' layout — made for cafés, salons, studios and boutiques.",
   },
 ];
 
@@ -36,7 +40,7 @@ export const REVIEWS = [
     role: "Verified buyer",
   },
   {
-    text: "It's very easy to set up NFC in a separate app, and the QR code needs to be registered on a website that you can access by scanning the code on the sign. I thought it would be more complicated, but everything is great.",
+    text: "It's very easy to set up NFC in a separate app, and the QR code is registered by scanning the code on the sign. I thought it would be more complicated, but everything is great.",
     color: "White",
     role: "Verified buyer",
   },
@@ -54,27 +58,49 @@ export const REVIEWS = [
 
 export const FAQS = [
   {
-    q: "Is it hard to set up?",
-    a: "Not at all. Program the NFC chip in minutes with any free NFC tools app — just paste your Google review link. The QR code is registered by scanning the code printed on the stand and entering your link on the setup page.",
+    q: "How does the stand actually work?",
+    a: "Your customer taps the stand with their phone — exactly like tap-to-pay — or scans the printed QR code. Their phone opens your Google review page instantly. They tap the stars, write a line, hit post. The whole thing takes about 8 seconds.",
   },
   {
-    q: "Which phones does it work with?",
-    a: "The tap function works with any NFC-enabled iPhone or Android phone. For everything else, the QR code works with any smartphone camera — so every customer is covered.",
+    q: "Does it work with every phone?",
+    a: "Yes. The tap works with every NFC-enabled iPhone and virtually every Android made after 2016 — the same technology as Apple Pay and Google Pay. For anything older, the printed QR code works with any camera. No customer is ever left out.",
   },
   {
-    q: "Which platforms can I link to?",
-    a: "The stand is fully programmable: point it at Google Reviews, Facebook, Instagram, LINE or TikTok. One tap connects customers to whichever platform matters most to your business.",
+    q: "Is there a monthly fee or subscription?",
+    a: "Never. This is a one-time purchase: unlimited taps, unlimited scans, forever. No monthly software bills, no per-review charges, no renewals.",
   },
   {
-    q: "Can I reprogram it later?",
-    a: "Yes. The NTAG215 chip is rewritable, so you can update your review link or switch platforms anytime without buying a new stand.",
+    q: "How hard is it to set up?",
+    a: "About 30 seconds. Scan the QR code on the stand, paste your Google review link, and you're live. The NFC chip programs with any free NFC tools app. If you can copy and paste a link, you can set this up.",
+  },
+  {
+    q: "Can I change the link later?",
+    a: "Absolutely. The NTAG215 chip is rewritable — update your review link, switch platforms, or point it at Facebook, Instagram, LINE or TikTok anytime without buying anything new.",
   },
   {
     q: "How fast is delivery?",
-    a: "Recent buyers report delivery in 7–9 days. Every stand ships as a single piece per pack, ready to place on your counter straight out of the box.",
+    a: "Recent buyers report delivery in 7–9 days. Every stand ships as a single piece per pack, ready to go on your counter straight out of the box.",
   },
-  {
-    q: "Is it safe and certified?",
-    a: "The stand is CE certified, meeting European safety and environmental standards, and is built with no high-concern chemicals for a safe, eco-friendly experience.",
-  },
+];
+
+export const INDUSTRIES = [
+  "Restaurants & Cafés",
+  "Salons, Spas & Barbershops",
+  "Dental & Medical Clinics",
+  "Auto Repair & Detailing",
+  "Hotels & Hospitality",
+  "Real Estate Agencies",
+  "Gyms & Fitness Studios",
+  "Retail & Boutiques",
+  "Pet Groomers",
+  "Contractors & Home Services",
+];
+
+export const INCLUSIONS = [
+  "1× NFC 215 Google review stand in your chosen style and color",
+  "Rewritable NTAG215 chip — link it to your Google review page",
+  "Printed QR code backup so every customer is covered",
+  "Stable standing bracket built for counters, desks and tables",
+  "Free reprogramming anytime — change your link in seconds",
+  "CE certified, eco-friendly build with no high-concern chemicals",
 ];

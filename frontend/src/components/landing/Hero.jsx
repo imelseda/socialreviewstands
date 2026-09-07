@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, Nfc, QrCode, ShieldCheck, Truck } from "lucide-react";
+import { Star, Nfc, QrCode, Ban, Timer } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -8,39 +8,42 @@ const fadeUp = (delay = 0) => ({
 });
 
 const STATS = [
-  { icon: Star, label: "5-star buyer feedback" },
-  { icon: Truck, label: "7–9 day delivery" },
-  { icon: ShieldCheck, label: "CE certified" },
+  { icon: Timer, value: "8 sec", label: "from tap to posted review" },
+  { icon: Star, value: "3.3×", label: "more clicks with 50+ reviews" },
+  { icon: Ban, value: "$0", label: "monthly fees — ever" },
 ];
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32">
+    <section id="top" className="relative overflow-hidden metallic-bg pt-32 pb-24 lg:pt-40 lg:pb-28">
       <div className="noise-overlay" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative">
         <div>
-          <motion.p {...fadeUp(0)} data-testid="hero-overline" className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4285F4] mb-6">
-            NFC 215 · Programmable Google Review Stand
+          <motion.p {...fadeUp(0)} data-testid="hero-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-6">
+            NFC + QR · Google Review Stand · Model 215
           </motion.p>
-          <motion.h1 {...fadeUp(0.1)} data-testid="hero-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1.05] mb-6">
-            Every happy customer, one tap away from a 5-star review.
+          <motion.h1 {...fadeUp(0.1)} data-testid="hero-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-6 text-[#F8F9FA]">
+            Every happy customer. One tap. <span className="gold-text">Five stars.</span>
           </motion.h1>
-          <motion.p {...fadeUp(0.2)} data-testid="hero-subtext" className="text-base md:text-lg text-[#525252] max-w-xl mb-10">
-            Place the NFC 215 stand on your counter. Customers tap their phone or scan the QR code and land straight on your Google review page — no apps to install, no awkward asking.
+          <motion.p {...fadeUp(0.2)} data-testid="hero-subtext" className="text-base md:text-lg text-[#94A3B8] max-w-xl mb-10 leading-relaxed">
+            Asking for Google reviews is awkward — and customers who promise to leave one forget the second they walk out. The NFC 215 stand puts your review page one tap away, right on your counter. No apps. No searching. No monthly fees.
           </motion.p>
           <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-4 mb-12">
-            <a data-testid="hero-order-button" href="#order" className="rounded-full bg-[#4285F4] hover:bg-[#2B6CDA] text-white font-semibold px-8 py-4 transition-colors duration-200">
-              Order Your Stand
+            <a data-testid="hero-order-button" href="#order" className="btn-gold">
+              Get Your Stand Now
             </a>
-            <a data-testid="hero-how-it-works-button" href="#how-it-works" className="rounded-full border border-[#121212]/15 bg-white hover:bg-[#121212] hover:text-white text-[#121212] font-semibold px-8 py-4 transition-colors duration-200">
+            <a data-testid="hero-how-it-works-button" href="#how-it-works" className="btn-ghost-gold">
               See How It Works
             </a>
           </motion.div>
-          <motion.div {...fadeUp(0.4)} className="flex flex-wrap gap-x-10 gap-y-4">
+          <motion.div {...fadeUp(0.4)} data-testid="hero-stats" className="grid grid-cols-3 gap-6 max-w-lg border-t border-[#D4AF37]/15 pt-8">
             {STATS.map((s) => (
-              <div key={s.label} data-testid={`hero-stat-${s.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`} className="flex items-center gap-2.5">
-                <s.icon size={18} className="text-[#4285F4]" aria-hidden="true" />
-                <span className="text-sm font-medium text-[#525252]">{s.label}</span>
+              <div key={s.value} data-testid={`hero-stat-${s.value.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}`}>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <s.icon size={16} className="text-[#D4AF37]" aria-hidden="true" />
+                  <span className="font-display text-2xl sm:text-3xl font-bold gold-text">{s.value}</span>
+                </div>
+                <p className="text-xs text-[#94A3B8] leading-snug">{s.label}</p>
               </div>
             ))}
           </motion.div>
@@ -51,22 +54,22 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           className="relative"
         >
-          <div className="rounded-[2rem] overflow-hidden border border-[#E5E5E5] bg-white">
+          <div className="rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
             <img
-              src="/images/stand-white-google.png"
-              alt="NFC 215 Google review stand on a counter"
+              src="/images/stand-phone-review.png"
+              alt="NFC 215 Google review stand next to a phone showing a 5-star Google review page"
               data-testid="hero-product-image"
               className="w-full max-h-[70vh] object-cover"
             />
           </div>
-          <div data-testid="hero-tap-badge" className="absolute -left-3 top-10 flex items-center gap-2 rounded-full bg-white border border-[#E5E5E5] shadow-lg px-4 py-2 text-xs font-semibold text-[#121212]">
-            <span className="w-7 h-7 rounded-full bg-[#4285F4]/10 text-[#4285F4] flex items-center justify-center">
+          <div data-testid="hero-tap-badge" className="absolute -left-3 top-10 flex items-center gap-2 rounded-full bg-[#12141C] border border-[#D4AF37]/40 shadow-[0_8px_24px_rgba(0,0,0,0.5)] px-4 py-2 text-xs font-semibold text-[#F3E5AB]">
+            <span className="w-7 h-7 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center">
               <Nfc size={14} aria-hidden="true" />
             </span>
             Tap with NFC
           </div>
-          <div data-testid="hero-scan-badge" className="absolute -right-3 bottom-12 flex items-center gap-2 rounded-full bg-white border border-[#E5E5E5] shadow-lg px-4 py-2 text-xs font-semibold text-[#121212]">
-            <span className="w-7 h-7 rounded-full bg-[#4285F4]/10 text-[#4285F4] flex items-center justify-center">
+          <div data-testid="hero-scan-badge" className="absolute -right-3 bottom-12 flex items-center gap-2 rounded-full bg-[#12141C] border border-[#D4AF37]/40 shadow-[0_8px_24px_rgba(0,0,0,0.5)] px-4 py-2 text-xs font-semibold text-[#F3E5AB]">
+            <span className="w-7 h-7 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] flex items-center justify-center">
               <QrCode size={14} aria-hidden="true" />
             </span>
             Scan the QR code

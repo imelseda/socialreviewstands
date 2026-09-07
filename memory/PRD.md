@@ -1,45 +1,41 @@
 # TapReview 215 — PRD
 
 ## Original Problem Statement
-Build a website promoting the new Google NFC review stands (NFC 215 card): a programmable NFC + QR standing display card that boosts Google reviews. Multi-platform (Google Reviews, Facebook, Instagram, LINE, TikTok), standing bracket design in Style A/B black/white, CE certified, 1 piece per pack, eco-friendly build, Model 215 card. Includes real buyer reviews (easy setup, 7–9 day delivery, automatic review collection).
+Website promoting the Google NFC review stand (NFC 215 card): programmable NFC + QR countertop stand that boosts Google reviews. Multi-platform (Google, Facebook, Instagram, LINE, TikTok), Style A/B in black/white, CE certified, 1pc/pack, eco-friendly, Model 215. Real buyer reviews included.
+
+## Iteration 2 (2026-09-07): Luxe Redesign + Sales Copy
+User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro listing) → full copy rewrite using Problem → Solution → Offer sales formula; color scheme changed to black metallic + yellow/gold ("luxor", premium); clear CTAs; Stripe payment buttons to be added LATER (not implemented yet).
 
 ## User Personas
-- Small business owners (cafés, salons, massage studios, retail) who want more Google reviews without asking customers
-- Social-media-first brands wanting TikTok/Instagram follows from foot traffic
-- Resellers/distributors evaluating the product (specs, certification, packaging)
+- Small business owners (cafés, salons, dental, auto, hotels, real estate) losing reviews to friction
+- Multi-location buyers evaluating bulk
 
 ## Architecture
-- Frontend: React (CRA + craco), Tailwind, framer-motion, lucide-react, sonner toasts, shadcn/ui (accordion, input, textarea, label). Single-page landing at `/app/frontend/src/components/landing/`.
-- Backend: FastAPI at `/app/backend/server.py`, routes prefixed `/api`, MongoDB via motor (MONGO_URL/DB_NAME from env). Pydantic BaseDocument + PyObjectId pattern.
-- Product images served from `/app/frontend/public/images/` (4 user-provided photos).
+- Frontend: React + Tailwind + framer-motion + sonner + shadcn/ui. Dark luxe theme: #0A0B0E obsidian, gold #D4AF37/#F3E5AB, Playfair Display headings + Satoshi body. Sections in /app/frontend/src/components/landing/.
+- Backend: FastAPI /api/enquiries (POST create, GET list) → MongoDB via motor. Unchanged from v1.
+- Images: /app/frontend/public/images/ (9 product photos from user uploads).
 
-## Core Requirements (static)
-- Promote NFC 215 stand: features, variants, specs, reviews, FAQ
-- Order/enquiry capture with variant + quantity
-- Premium e-commerce landing aesthetic (Cabinet Grotesk + Satoshi, off-white #F9F9F7, Google Blue #4285F4)
-
-## Implemented (2026-08-31)
-- Sticky glassmorphic navbar with anchors + Order Now CTA
-- Hero with product photo, floating Tap/Scan badges, trust stats, staggered entrance animations
-- How-it-works 3-step bento (Tap/Scan → Review page opens → Rating grows)
-- Features bento grid (multi-platform chips, NTAG215, bracket design, CE, eco, 1pc pack)
-- Dark variant-selector section: 4 styles (A/B × black/white) with animated image swap
-- Real customer reviews from the listing (4 cards, star ratings)
-- Specs table (model 215, dimensions, chip, certification, packaging) + dimension photo
-- FAQ accordion (6 Q&As)
-- Order enquiry form → POST /api/enquiries (MongoDB), GET /api/enquiries list endpoint, sonner success/error toasts
-- Fixed asset mapping bug: user-provided images were downloaded in rotated order; renamed files to match content
+## Implemented (2026-09-07)
+- Navbar: glass dark, gold CTA "Get Your Stand"
+- Hero: "Every happy customer. One tap. Five stars." + stats (8 sec / 3.3× / $0 fees) + phone+stand photo
+- Problem section: 3 pain cards (search struggle, awkward ask, forgetfulness) + stat strip (74%, 3.3×, 2min vs 8sec)
+- How It Works: Tap/Review/Done 3 steps + infographic image
+- Benefits bento: $0 fees, every phone, tap+scan, day-one results, multi-platform, CE
+- Variants: 4 luxe-named finishes with image swap
+- Industries grid: 10 business types with icons
+- Reviews: 4 real buyer testimonials (restyled dark/gold)
+- Offer: inclusions list + 90-day money-back guarantee box (ASSUMED copy — user to confirm guarantee policy)
+- Specs table, FAQ (subscription/phones/setup/delivery), Order enquiry form ("Reserve My Stand", Stripe note), Footer with Google non-affiliation disclaimer
 
 ## Verified
-- curl: POST/GET /api/enquiries return JSON with string ids (no ObjectId leakage)
-- Screenshot e2e: hero render, variant switch updates image, FAQ accordion opens, order form submits with success toast
+- Screenshot e2e: hero/problem/variants/offer/order sections render in dark luxe theme; variant switch works; order form submits with success toast (enquiry saved to DB)
 
 ## Backlog
-- P0: none blocking
-- P1: Admin view for enquiries (protected), email notification on new enquiry (Resend), pricing display + Stripe checkout
-- P2: Multi-language support, review marquee animation, wholesale/bulk pricing tiers, SEO metadata + OG tags
+- P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
+- P1: User to confirm/edit 90-day guarantee claim; email notification on enquiry (Resend); admin view of enquiries
+- P2: Demo video embed, bulk/multi-location pricing tiers, SEO/OG metadata
 
 ## Next Tasks
-1. Add email notification when an enquiry arrives (Resend managed integration)
-2. Add pricing + Stripe checkout for direct purchase
-3. Add simple admin login to view enquiries
+1. Wire Stripe payment buttons (needs prices per variant/pack)
+2. Confirm guarantee + shipping copy accuracy
+3. Resend email alerts on new enquiry
