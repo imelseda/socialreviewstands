@@ -69,7 +69,6 @@ export default function HowItWorks() {
             <video
               controls
               preload="metadata"
-              poster="/images/tap-review-done.png"
               data-testid="solution-demo-video"
               className="w-full max-h-[75vh] object-cover bg-black"
               aria-label="Demo video: a real customer taps the NFC review stand and leaves a Google review"
