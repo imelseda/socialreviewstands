@@ -36,7 +36,8 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 
 - Hero media is now a 30s autoplaying demo video (user-uploaded tap4-reviews.mp4 → /videos/hero-demo.mp4, faststart-remuxed so playback starts instantly) with a VP9 WebM fallback and poster image. Note: test-browser Chromium cannot decode H.264; real browsers use the MP4.
 - Hero floating Tap/Scan badges removed per user request; hero video has a "Tap for sound" unmute toggle (browsers block autoplay-with-sound).
-- Solution (How It Works) section now plays the user-uploaded testimonial video (google-nfc-stand-testimonial.mp4, ~1:54) with native controls and sound, replacing the static infographic (kept as the video poster).
+- Solution (How It Works) section shows the user-uploaded bar-scene lifestyle photo (solution-bar-scene.png). NOTE: this photo visibly carries "TAPFIVE" competitor branding on the stand/cards — flagged to user; swap if a branded-free shot is available.
+- Testimonial video (demo-testimonial.mp4/.webm, compressed 7.9MB/6MB) now lives in the Reviews section above the testimonial cards, with native controls + sound.
 
 ## Backlog
 - P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
