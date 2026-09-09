@@ -66,21 +66,13 @@ export default function HowItWorks() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
-            <video
-              controls
-              preload="metadata"
-              data-testid="solution-demo-video"
-              className="w-full max-h-[75vh] object-cover bg-black"
-              aria-label="Demo video: a real customer taps the NFC review stand and leaves a Google review"
-            >
-              <source src="/videos/demo-testimonial.mp4" type="video/mp4" />
-              <source src="/videos/demo-testimonial.webm" type="video/webm" />
-            </video>
+            <img
+              src="/images/solution-bar-scene.png"
+              alt="Customer holding a phone with the Google review page open next to the NFC review stand on a bar counter"
+              data-testid="solution-image"
+              className="w-full max-h-[75vh] object-cover"
+            />
           </div>
-          <p data-testid="solution-demo-caption" className="mt-5 text-sm text-[#94A3B8] flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-[#D4AF37] shrink-0" aria-hidden="true" />
-            See it in action — a real tap, a real review, seconds flat. Sound on for the full story.
-          </p>
         </motion.div>
       </div>
     </section>
