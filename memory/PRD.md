@@ -39,6 +39,11 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Solution (How It Works) section shows the user-uploaded bar-scene lifestyle photo (solution-bar-scene.png). NOTE: this photo visibly carries "TAPFIVE" competitor branding on the stand/cards — flagged to user; swap if a branded-free shot is available.
 - Testimonial video (demo-testimonial.mp4/.webm, compressed 7.9MB/6MB) now lives in the Reviews section above the testimonial cards, with native controls + sound.
 
+## Iteration 4 (2026-09-10): Domain + Rebrand to TapFive Review
+- User's own domain: tapfivereview.com → site rebranded from "TapReview 215" to "TapFive Review" (navbar, footer, disclaimer, copyright, README).
+- SEO: canonical + og:url = https://tapfivereview.com/, og:image/twitter:image now ABSOLUTE (https://tapfivereview.com/images/og-cover.png), title/author/site_name updated. og-cover.png regenerated with TapFive Review branding + domain.
+- PENDING MANUAL STEP: domain DNS/mapping must be connected in Emergent deployment settings for tapfivereview.com to serve the app; absolute OG URLs only resolve once the domain is live.
+
 ## Backlog
 - P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
 - P1: User to confirm/edit 90-day guarantee claim; email notification on enquiry (Resend); admin view of enquiries
