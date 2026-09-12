@@ -48,6 +48,12 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - SocialProofPopup: rotating purchase toasts (12 mock buyers × 4 stand styles), first at 5s, visible 6s, gap 8–15s, dismissible — dark/gold themed.
 - SoldTodayBadge: seeded per-day count (60–99/day curve) that ticks live every 25–55s; placed in hero (under CTAs) and order section. NOTE: both are SIMULATED marketing figures, not real order data.
 
+## Iteration 6 (2026-09-12): Shopify theme
+- Built complete uploadable Shopify theme at /app/shopify-theme/ + zip at /app/tapfive-review-theme.zip (47 files, 6.7MB, committed to git incl. zip via add -f).
+- Structure: layout/theme.liquid (fonts, OG, favicon), templates index/product/cart/page (json) + 404/search (liquid), 14 sections (header, footer, hero, problem, solution, benefits, variants, industries, reviews, offer, specs, faq, order, main-product), snippets tfr-sold-today + tfr-social-proof, assets tfr.css + all images (NO videos — Shopify theme zips reject mp4; hero + reviews sections have video pickers for merchant upload of hero-demo.mp4 / demo-testimonial.mp4).
+- All JSON + section schemas validated. NOT tested in a live Shopify store (no store access).
+- Custom-liquid guides for hero/problem/solution also saved in /app/memory/.
+
 ## Backlog
 - P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
 - P1: User to confirm/edit 90-day guarantee claim; email notification on enquiry (Resend); admin view of enquiries
