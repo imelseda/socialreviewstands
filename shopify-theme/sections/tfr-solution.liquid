@@ -1,0 +1,57 @@
+<section class="tfr-solution" id="how-it-works">
+  <div class="tfr-inner tfr-split">
+    <div>
+      <p class="tfr-eyebrow">The solution</p>
+      <h2 class="tfr-h2">Tap. Review. Done. <span class="tfr-gold">It's really that simple.</span></h2>
+      <p class="tfr-lead">No tech skills. No learning curve. No staff training. The stand removes every step between a happy customer and a posted 5-star review.</p>
+
+      <div class="tfr-steps">
+        <div class="tfr-step">
+          <span class="tfr-step__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
+          </span>
+          <div>
+            <div class="tfr-step__head"><span class="tfr-step__num">01</span><h3>Unbox &amp; place</h3></div>
+            <p>Set the stand on your counter, front desk, or table. Setup takes 30 seconds — scan the QR, paste your Google review link once, done.</p>
+          </div>
+        </div>
+        <div class="tfr-step">
+          <span class="tfr-step__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 8.5a6 6 0 0 1 12 0"/><path d="M3.5 6a11 11 0 0 1 17 0"/><path d="M8.5 11a3 3 0 0 1 7 0"/><circle cx="12" cy="13.5" r="1.4" fill="currentColor"/></svg>
+          </span>
+          <div>
+            <div class="tfr-step__head"><span class="tfr-step__num">02</span><h3>Customer taps or scans</h3></div>
+            <p>One tap with any smartphone — just like tap-to-pay — or a quick QR scan. No app downloads, no typing, no searching for your business.</p>
+          </div>
+        </div>
+        <div class="tfr-step">
+          <span class="tfr-step__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </span>
+          <div>
+            <div class="tfr-step__head"><span class="tfr-step__num">03</span><h3>Reviews roll in 24/7</h3></div>
+            <p>Your Google review page opens instantly while the experience is fresh. Ratings climb, rankings rise, and new customers find you first.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tfr-frame tfr-frame--tall">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1600 | image_tag: alt: 'Customer holding a phone with the Google review page open next to the NFC review stand on a bar counter', class: 'tfr-media' }}
+      {% else %}
+        <img class="tfr-media" src="{{ 'solution-bar-scene.png' | asset_url }}" alt="Customer holding a phone with the Google review page open next to the NFC review stand on a bar counter" loading="lazy">
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TFR Solution",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Side image (defaults to bundled bar scene)" }
+  ],
+  "presets": [{ "name": "TFR Solution" }]
+}
+{% endschema %}

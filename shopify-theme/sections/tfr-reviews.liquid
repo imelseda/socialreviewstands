@@ -1,0 +1,45 @@
+<section class="tfr-reviews" id="reviews">
+  <div class="tfr-inner">
+    <p class="tfr-eyebrow">Verified buyer reviews</p>
+    <h2 class="tfr-h2">Real businesses. <span class="tfr-gold">Real 5-star results.</span></h2>
+    <p class="tfr-lead">Owners who stopped asking for reviews — and started collecting them automatically.</p>
+
+    <div class="tfr-reviews__video">
+      <div class="tfr-frame">
+        {% if section.settings.video != blank %}
+          {{ section.settings.video | video_tag: controls: true, preload: 'metadata', class: 'tfr-reviews__player' }}
+        {% endif %}
+      </div>
+      <p class="tfr-caption"><span class="tfr-caption__dot"></span>Watch a real owner walk through it — two minutes, best with sound on.</p>
+    </div>
+
+    <div class="tfr-grid-2">
+      {% assign reviews = "Great product, now my clients can leave Google reviews. Just what I really needed — will recommend to other businesses.|Verified buyer|Black##It's very easy to set up NFC in a separate app, and the QR code is registered by scanning the code on the sign. I thought it would be more complicated, but everything is great.|Verified buyer|White##Great price. Was delivered very quickly in just 7 days. Works perfectly. Both the NFC and QR code work well. Definitely recommend it.|Verified buyer|White##I bought 2, one for my massage studio and one for my beauty store. Very nice and easy for customers. Now there's no need to ask for recommendations — they do it automatically. It arrived in 9 days.|Massage & beauty studio owner|Black" | split: "##" %}
+      {% for r in reviews %}
+        {% assign parts = r | split: "|" %}
+        <figure class="tfr-card tfr-review{% if forloop.index == 2 %} tfr-review--offset{% endif %}">
+          <div class="tfr-stars" aria-label="5 out of 5 stars">
+            {% for i in (1..5) %}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5L2.6 9.3l6.5-.9z"/></svg>
+            {% endfor %}
+          </div>
+          <blockquote>“{{ parts[0] }}”</blockquote>
+          <figcaption>
+            <span class="tfr-review__avatar">{{ parts[1] | slice: 0 }}</span>
+            <span><b>{{ parts[1] }}</b><small>Color: {{ parts[2] }}</small></span>
+          </figcaption>
+        </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TFR Reviews",
+  "settings": [
+    { "type": "video", "id": "video", "label": "Testimonial video (upload demo-testimonial.mp4)" }
+  ],
+  "presets": [{ "name": "TFR Reviews" }]
+}
+{% endschema %}

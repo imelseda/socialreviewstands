@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "hero": { "type": "tfr-hero" },
+    "problem": { "type": "tfr-problem" },
+    "solution": { "type": "tfr-solution" },
+    "benefits": { "type": "tfr-benefits" },
+    "variants": { "type": "tfr-variants" },
+    "industries": { "type": "tfr-industries" },
+    "reviews": { "type": "tfr-reviews" },
+    "offer": { "type": "tfr-offer" },
+    "specs": { "type": "tfr-specs" },
+    "faq": { "type": "tfr-faq" },
+    "order": { "type": "tfr-order" }
+  },
+  "order": ["hero", "problem", "solution", "benefits", "variants", "industries", "reviews", "offer", "specs", "faq", "order"]
+}

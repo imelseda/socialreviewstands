@@ -1,0 +1,42 @@
+<section class="tfr-offer" id="offer">
+  <div class="tfr-inner tfr-split">
+    <div>
+      <p class="tfr-eyebrow">The offer</p>
+      <h2 class="tfr-h2">Your 24/7 review machine. <span class="tfr-gold">One purchase. Zero fees.</span></h2>
+      <p class="tfr-lead">A single new customer from a Google review can be worth hundreds to your business. One stand on your counter pays for itself with the very first review it collects.</p>
+      <ul class="tfr-checklist">
+        <li><span class="tfr-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>1× NFC 215 Google review stand in your chosen style and color</li>
+        <li><span class="tfr-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Rewritable NTAG215 chip — link it to your Google review page</li>
+        <li><span class="tfr-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Printed QR code backup so every customer is covered</li>
+        <li><span class="tfr-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Stable standing bracket built for counters, desks and tables</li>
+        <li><span class="tfr-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Free reprogramming anytime — change your link in seconds</li>
+        <li><span class="tfr-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>CE certified, eco-friendly build with no high-concern chemicals</li>
+      </ul>
+      <a href="{{ section.settings.cta_link | default: routes.all_products_collection_url }}" class="tfr-btn-gold">{{ section.settings.cta_label }}</a>
+    </div>
+
+    <div class="tfr-guarantee">
+      <span class="tfr-guarantee__icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.5-2 8-6.5 8-11V5l-8-3-8 3v6c0 4.5 2.5 9 8 11z"/><path d="m9 12 2 2 4-4"/></svg>
+      </span>
+      <h3>90-day money-back guarantee</h3>
+      <p>Put the stand on your counter and watch the reviews come in. If you're not completely satisfied within 90 days, send it back for a full refund — no questions, no hassle, zero risk.</p>
+      <div class="tfr-guarantee__trust">
+        <div><span class="tfr-icon tfr-icon--sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.5-2 8-6.5 8-11V5l-8-3-8 3v6c0 4.5 2.5 9 8 11z"/></svg></span><span>90-day money-back guarantee</span></div>
+        <div><span class="tfr-icon tfr-icon--sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span><span>Fast tracked shipping — buyers report 7–9 days</span></div>
+        <div><span class="tfr-icon tfr-icon--sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m5 5 14 14"/></svg></span><span>No subscription. No monthly fees. Ever.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TFR Offer",
+  "settings": [
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Claim Your Stand Now" },
+    { "type": "url", "id": "cta_link", "label": "Button link" }
+  ],
+  "presets": [{ "name": "TFR Offer" }]
+}
+{% endschema %}

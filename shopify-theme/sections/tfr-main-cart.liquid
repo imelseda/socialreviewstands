@@ -1,0 +1,46 @@
+<section class="tfr-cart">
+  <div class="tfr-inner tfr-inner--narrow">
+    <p class="tfr-eyebrow">Your cart</p>
+    <h1 class="tfr-h2">Almost there.</h1>
+
+    {% if cart.item_count > 0 %}
+      <form action="{{ routes.cart_url }}" method="post">
+        <div class="tfr-cart__items">
+          {% for item in cart.items %}
+            <div class="tfr-card tfr-cart__item">
+              {% if item.image %}
+                <img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}" class="tfr-cart__thumb">
+              {% endif %}
+              <div class="tfr-cart__meta">
+                <b>{{ item.product.title }}</b>
+                {% unless item.product.has_only_default_variant %}<small>{{ item.variant.title }}</small>{% endunless %}
+                <small>{{ item.final_line_price | money }}</small>
+              </div>
+              <div class="tfr-cart__qty">
+                <input class="tfr-input" type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="Quantity">
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="tfr-cart__footer">
+          <button type="submit" class="tfr-btn-ghost">Update cart</button>
+          <div class="tfr-cart__total">
+            <span>Subtotal</span>
+            <b>{{ cart.total_price | money }}</b>
+          </div>
+          <button type="submit" name="checkout" class="tfr-btn-gold">Checkout</button>
+        </div>
+      </form>
+    {% else %}
+      <p class="tfr-lead">Your cart is empty — your counter is still waiting for its review machine.</p>
+      <a href="{{ routes.all_products_collection_url }}" class="tfr-btn-gold">Get Your Stand</a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TFR Cart",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+<footer class="tfr-footer" data-testid="site-footer">
+  <div class="tfr-footer__inner">
+    <div class="tfr-footer__top">
+      <div class="tfr-header__logo">
+        <span class="tfr-header__mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 8.5a6 6 0 0 1 12 0"/><path d="M3.5 6a11 11 0 0 1 17 0"/><path d="M8.5 11a3 3 0 0 1 7 0"/><circle cx="12" cy="13.5" r="1.4" fill="currentColor"/></svg>
+        </span>
+        {{ shop.name | default: 'TapFive Review' }}
+      </div>
+      <nav class="tfr-footer__links">
+        <a href="{{ routes.root_url }}#problem">The Problem</a>
+        <a href="{{ routes.root_url }}#how-it-works">How It Works</a>
+        <a href="{{ routes.root_url }}#variants">Styles</a>
+        <a href="{{ routes.root_url }}#reviews">Reviews</a>
+        <a href="{{ routes.root_url }}#order">Order</a>
+      </nav>
+    </div>
+    <div class="tfr-divider"></div>
+    <p class="tfr-footer__disclaimer">
+      Disclaimer: {{ shop.name | default: 'TapFive Review' }} is not affiliated with, endorsed by, or sponsored by Google LLC. "Google" and the Google logo are registered trademarks of Google LLC. Our stands use standard NFC technology to open your publicly available review link.
+    </p>
+    <p class="tfr-footer__copy">© {{ 'now' | date: '%Y' }} {{ shop.name | default: 'TapFive Review' }} · tapfivereview.com · Model 215 card · CE certified. All rights reserved.</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "TFR Footer",
+  "settings": []
+}
+{% endschema %}

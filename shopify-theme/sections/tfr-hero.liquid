@@ -1,0 +1,65 @@
+<section class="tfr-hero" id="top">
+  <div class="tfr-hero__glow" aria-hidden="true"></div>
+  <div class="tfr-hero__inner">
+    <div class="tfr-hero__left">
+      <p class="tfr-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1 class="tfr-h1">{{ section.settings.heading }}</h1>
+      <p class="tfr-lead tfr-hero__sub">{{ section.settings.subtext }}</p>
+      <div class="tfr-cta-row">
+        <a href="{{ section.settings.cta1_link | default: routes.all_products_collection_url }}" class="tfr-btn-gold">{{ section.settings.cta1_label }}</a>
+        <a href="{{ section.settings.cta2_link | default: '#how-it-works' }}" class="tfr-btn-ghost">{{ section.settings.cta2_label }}</a>
+      </div>
+      {% render 'tfr-sold-today' %}
+      <div class="tfr-stats">
+        <div class="tfr-stat"><b>8 sec</b><span>from tap to posted review</span></div>
+        <div class="tfr-stat"><b>3.3×</b><span>more clicks with 50+ reviews</span></div>
+        <div class="tfr-stat"><b>$0</b><span>monthly fees — ever</span></div>
+      </div>
+    </div>
+    <div class="tfr-hero__media" id="tfr-hero-media-{{ section.id }}">
+      <div class="tfr-frame">
+        {% if section.settings.video != blank %}
+          {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, class: 'tfr-hero__video' }}
+          <button type="button" class="tfr-sound" data-tfr-sound>Tap for sound</button>
+        {% elsif section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 1600 | image_tag: class: 'tfr-hero__img', alt: 'NFC 215 Google review stand next to a phone showing a 5-star Google review page' }}
+        {% else %}
+          <img class="tfr-hero__img" src="{{ 'stand-phone-review.png' | asset_url }}" alt="NFC 215 Google review stand next to a phone showing a 5-star Google review page">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var wrap = document.getElementById('tfr-hero-media-{{ section.id }}');
+    if (!wrap) return;
+    var video = wrap.querySelector('video');
+    var btn = wrap.querySelector('[data-tfr-sound]');
+    if (!video || !btn) return;
+    btn.addEventListener('click', function () {
+      video.muted = !video.muted;
+      if (!video.muted) video.play();
+      btn.textContent = video.muted ? 'Tap for sound' : 'Sound on';
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "TFR Hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "NFC + QR · Google Review Stand · Model 215" },
+    { "type": "html", "id": "heading", "label": "Heading", "default": "Every happy customer. One tap. <span class=\"tfr-gold\">Five stars.</span>" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Asking for Google reviews is awkward — and customers who promise to leave one forget the second they walk out. The NFC 215 stand puts your review page one tap away, right on your counter. No apps. No searching. No monthly fees." },
+    { "type": "text", "id": "cta1_label", "label": "Primary button label", "default": "Get Your Stand Now" },
+    { "type": "url", "id": "cta1_link", "label": "Primary button link" },
+    { "type": "text", "id": "cta2_label", "label": "Secondary button label", "default": "See How It Works" },
+    { "type": "url", "id": "cta2_link", "label": "Secondary button link" },
+    { "type": "video", "id": "video", "label": "Hero video (upload hero-demo.mp4)" },
+    { "type": "image_picker", "id": "image", "label": "Fallback image (used if no video)" }
+  ],
+  "presets": [{ "name": "TFR Hero" }]
+}
+{% endschema %}

@@ -1,0 +1,44 @@
+<section class="tfr-faq" id="faq">
+  <div class="tfr-inner tfr-inner--narrow">
+    <p class="tfr-eyebrow">FAQ</p>
+    <h2 class="tfr-h2">Got questions? <span class="tfr-gold">Good.</span></h2>
+
+    <div class="tfr-faq__list">
+      {% for block in section.blocks %}
+        <details class="tfr-faq__item" {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question }}</summary>
+          <p>{{ block.settings.answer }}</p>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TFR FAQ",
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question?" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Answer." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TFR FAQ",
+      "blocks": [
+        { "type": "qa", "settings": { "question": "How does the stand actually work?", "answer": "Your customer taps the stand with their phone — exactly like tap-to-pay — or scans the printed QR code. Their phone opens your Google review page instantly. They tap the stars, write a line, hit post. The whole thing takes about 8 seconds." } },
+        { "type": "qa", "settings": { "question": "Does it work with every phone?", "answer": "Yes. The tap works with every NFC-enabled iPhone and virtually every Android made after 2016 — the same technology as Apple Pay and Google Pay. For anything older, the printed QR code works with any camera. No customer is ever left out." } },
+        { "type": "qa", "settings": { "question": "Is there a monthly fee or subscription?", "answer": "Never. This is a one-time purchase: unlimited taps, unlimited scans, forever. No monthly software bills, no per-review charges, no renewals." } },
+        { "type": "qa", "settings": { "question": "How hard is it to set up?", "answer": "About 30 seconds. Scan the QR code on the stand, paste your Google review link, and you're live. The NFC chip programs with any free NFC tools app. If you can copy and paste a link, you can set this up." } },
+        { "type": "qa", "settings": { "question": "Can I change the link later?", "answer": "Absolutely. The NTAG215 chip is rewritable — update your review link, switch platforms, or point it at Facebook, Instagram, LINE or TikTok anytime without buying anything new." } },
+        { "type": "qa", "settings": { "question": "How fast is delivery?", "answer": "Recent buyers report delivery in 7–9 days. Every stand ships as a single piece per pack, ready to go on your counter straight out of the box." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

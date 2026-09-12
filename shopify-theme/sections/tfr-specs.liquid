@@ -1,0 +1,35 @@
+<section class="tfr-specs" id="specs">
+  <div class="tfr-inner tfr-split">
+    <div>
+      <p class="tfr-eyebrow">Specifications</p>
+      <h2 class="tfr-h2">Small footprint. <span class="tfr-gold">Serious hardware.</span></h2>
+      <dl class="tfr-specs__table">
+        <div><dt>Model number</dt><dd>215 card — precise identification, always the correct unit</dd></div>
+        <div><dt>Chip</dt><dd>NTAG215 (NFC), rewritable</dd></div>
+        <div><dt>Dimensions</dt><dd>12.75 × 7.6 × 5 cm (5.02 × 2.99 × 1.97 in)</dd></div>
+        <div><dt>Styles</dt><dd>Style A / Style B, obsidian black or pearl white</dd></div>
+        <div><dt>Compatibility</dt><dd>Google Reviews, Facebook, Instagram, LINE, TikTok</dd></div>
+        <div><dt>Certification</dt><dd>CE certified — European safety &amp; environmental standards</dd></div>
+        <div><dt>Packaging</dt><dd>1 piece per pack — deploy one counter or many</dd></div>
+        <div><dt>Materials</dt><dd>Eco-friendly build, no high-concern chemicals</dd></div>
+      </dl>
+    </div>
+    <div class="tfr-frame tfr-frame--tall">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1600 | image_tag: alt: 'Black NFC 215 stand with dimension annotations', class: 'tfr-media' }}
+      {% else %}
+        <img class="tfr-media" src="{{ 'stand-black-dims.png' | asset_url }}" alt="Black NFC 215 stand with dimension annotations" loading="lazy">
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TFR Specs",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Side image (defaults to bundled dimension photo)" }
+  ],
+  "presets": [{ "name": "TFR Specs" }]
+}
+{% endschema %}

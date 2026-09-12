@@ -1,0 +1,96 @@
+<section class="tfr-variants" id="variants">
+  <div class="tfr-inner tfr-split">
+    <div class="tfr-frame tfr-frame--tall">
+      {% for i in (1..4) %}
+        {% assign key = 'image_' | append: i %}
+        {% assign img = section.settings[key] %}
+        {% if img != blank %}
+          {{ img | image_url: width: 1600 | image_tag: class: 'tfr-media tfr-variants__img', data-variant-image: i, loading: 'lazy' }}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div>
+      <p class="tfr-eyebrow">Choose your finish</p>
+      <h2 class="tfr-h2">Four finishes. <span class="tfr-gold">One reputation machine.</span></h2>
+      <p class="tfr-lead">Every unit is precisely identified by model number 215 — so you always receive exactly the stand you ordered, ready for your counter.</p>
+
+      <div class="tfr-variants__options" role="radiogroup" aria-label="Choose a style">
+        {% for i in (1..4) %}
+          {% assign nkey = 'name_' | append: i %}
+          {% assign skey = 'swatch_' | append: i %}
+          {% assign dkey = 'desc_' | append: i %}
+          <button type="button" class="tfr-variants__option{% if forloop.first %} is-active{% endif %}" role="radio" aria-checked="{% if forloop.first %}true{% else %}false{% endif %}" data-variant-option="{{ i }}" data-desc="{{ section.settings[dkey] | escape }}">
+            <span class="tfr-variants__swatch" style="background:{{ section.settings[skey] }}"></span>
+            <span>{{ section.settings[nkey] }}</span>
+            <svg class="tfr-variants__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </button>
+        {% endfor %}
+      </div>
+      <p class="tfr-variants__desc" data-variant-desc>{{ section.settings.desc_1 }}</p>
+
+      <ul class="tfr-bullets">
+        <li><span class="tfr-bullet"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 8.5a6 6 0 0 1 12 0"/><path d="M3.5 6a11 11 0 0 1 17 0"/><path d="M8.5 11a3 3 0 0 1 7 0"/><circle cx="12" cy="13.5" r="1.4" fill="currentColor"/></svg></span>Rewritable NTAG215 chip — fast, reliable reads every time</li>
+        <li><span class="tfr-bullet"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 14v.01M14 21v.01M21 21v.01"/></svg></span>Printed QR backup so no customer is ever left out</li>
+        <li><span class="tfr-bullet"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.3"/><path d="M21 3v6h-6"/></svg></span>Change your review link anytime, free, in seconds</li>
+      </ul>
+
+      <a href="{{ section.settings.cta_link | default: routes.all_products_collection_url }}" class="tfr-btn-gold" data-variant-cta>Get the <span data-variant-name>{{ section.settings.name_1 }}</span></a>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var section = document.getElementById('variants');
+    if (!section) return;
+    var options = section.querySelectorAll('[data-variant-option]');
+    var images = section.querySelectorAll('[data-variant-image]');
+    var desc = section.querySelector('[data-variant-desc]');
+    var ctaName = section.querySelector('[data-variant-name]');
+
+    function show(i) {
+      images.forEach(function (img) {
+        img.classList.toggle('is-visible', img.getAttribute('data-variant-image') === i);
+      });
+    }
+    show('1');
+
+    options.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        options.forEach(function (b) { b.classList.remove('is-active'); b.setAttribute('aria-checked', 'false'); });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-checked', 'true');
+        var i = btn.getAttribute('data-variant-option');
+        show(i);
+        desc.textContent = btn.getAttribute('data-desc');
+        ctaName.textContent = btn.querySelector('span:last-of-type').textContent;
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "TFR Variants",
+  "settings": [
+    { "type": "text", "id": "name_1", "label": "Style 1 name", "default": "Style A · Black" },
+    { "type": "color", "id": "swatch_1", "label": "Style 1 swatch", "default": "#12141A" },
+    { "type": "text", "id": "desc_1", "label": "Style 1 description", "default": "Brushed black metallic finish with a high-contrast gold-ring QR — commands attention on any counter." },
+    { "type": "image_picker", "id": "image_1", "label": "Style 1 image" },
+    { "type": "text", "id": "name_2", "label": "Style 2 name", "default": "Style A · White" },
+    { "type": "color", "id": "swatch_2", "label": "Style 2 swatch", "default": "#F8F9FA" },
+    { "type": "text", "id": "desc_2", "label": "Style 2 description", "default": "Pristine white face with the classic Google review layout — instant familiarity, instant trust." },
+    { "type": "image_picker", "id": "image_2", "label": "Style 2 image" },
+    { "type": "text", "id": "name_3", "label": "Style 3 name", "default": "Style B · Black" },
+    { "type": "color", "id": "swatch_3", "label": "Style 3 swatch", "default": "#12141A" },
+    { "type": "text", "id": "desc_3", "label": "Style 3 description", "default": "Stealth black stand for social-first brands — point it at Google, TikTok, Instagram and more." },
+    { "type": "image_picker", "id": "image_3", "label": "Style 3 image" },
+    { "type": "text", "id": "name_4", "label": "Style 4 name", "default": "Style B · White" },
+    { "type": "color", "id": "swatch_4", "label": "Style 4 swatch", "default": "#F8F9FA" },
+    { "type": "text", "id": "desc_4", "label": "Style 4 description", "default": "Minimal 'Tap to leave a review' layout — made for cafés, salons, studios and boutiques." },
+    { "type": "image_picker", "id": "image_4", "label": "Style 4 image" },
+    { "type": "url", "id": "cta_link", "label": "CTA link" }
+  ],
+  "presets": [{ "name": "TFR Variants" }]
+}
+{% endschema %}

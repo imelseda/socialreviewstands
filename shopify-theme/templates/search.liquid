@@ -1,0 +1,22 @@
+<section class="tfr-simple">
+  <div class="tfr-simple__inner">
+    <p class="tfr-eyebrow">Search</p>
+    <h1 class="tfr-h2">Search the store</h1>
+    <form action="{{ routes.search_url }}" method="get" class="tfr-search">
+      <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search…" class="tfr-input">
+      <button type="submit" class="tfr-btn-gold">Search</button>
+    </form>
+    {% if search.performed %}
+      <div class="tfr-search__results">
+        {% for item in search.results %}
+          <a class="tfr-card tfr-search__item" href="{{ item.url }}">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.content | strip_html | truncate: 140 }}</p>
+          </a>
+        {% else %}
+          <p class="tfr-lead">No results for “{{ search.terms }}”.</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>

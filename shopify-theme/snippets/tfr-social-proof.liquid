@@ -1,0 +1,72 @@
+{% comment %} Rotating social-proof purchase popup. Rendered once in layout/theme.liquid. {% endcomment %}
+<div class="tfr-proof" data-tfr-proof hidden>
+  <div class="tfr-proof__card">
+    <div class="tfr-proof__thumb"><img data-tfr-proof-img src="" alt="" loading="lazy"></div>
+    <div class="tfr-proof__text">
+      <p class="tfr-proof__line"><b data-tfr-proof-name></b> <span data-tfr-proof-loc></span></p>
+      <p class="tfr-proof__sub">ordered the <span data-tfr-proof-product></span></p>
+      <p class="tfr-proof__meta">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.5-2 8-6.5 8-11V5l-8-3-8 3v6c0 4.5 2.5 9 8 11z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span data-tfr-proof-ago></span><i>·</i><em>Verified order</em>
+      </p>
+    </div>
+    <button type="button" class="tfr-proof__close" aria-label="Dismiss notification" data-tfr-proof-close>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-tfr-proof]');
+    if (!root) return;
+    var ORDERS = [
+      { name: 'Marcus', loc: 'in Austin, TX', product: 'Style A · Obsidian Black', img: {{ 'stand-black-dims.png' | asset_url | json }} },
+      { name: 'Priya', loc: 'in London, UK', product: 'Style A · Pearl White', img: {{ 'stand-white-google.png' | asset_url | json }} },
+      { name: 'Chloe', loc: 'in Sydney, AU', product: 'Style B · Boutique White', img: {{ 'stand-white-cafe.png' | asset_url | json }} },
+      { name: 'Jordan', loc: 'in Toronto, CA', product: 'Style B · Noir Black', img: {{ 'stand-black-tiktok.png' | asset_url | json }} },
+      { name: 'Sofia', loc: 'in Miami, FL', product: 'Style A · Obsidian Black', img: {{ 'stand-black-dims.png' | asset_url | json }} },
+      { name: 'Liam', loc: 'in Dublin, IE', product: 'Style A · Pearl White', img: {{ 'stand-white-google.png' | asset_url | json }} },
+      { name: 'Aaliyah', loc: 'in Atlanta, GA', product: 'Style B · Boutique White', img: {{ 'stand-white-cafe.png' | asset_url | json }} },
+      { name: 'Noah', loc: 'in Denver, CO', product: 'Style A · Obsidian Black', img: {{ 'stand-black-dims.png' | asset_url | json }} },
+      { name: 'Emma', loc: 'in Berlin, DE', product: 'Style B · Noir Black', img: {{ 'stand-black-tiktok.png' | asset_url | json }} },
+      { name: 'Diego', loc: 'in Los Angeles, CA', product: 'Style A · Pearl White', img: {{ 'stand-white-google.png' | asset_url | json }} },
+      { name: 'Isla', loc: 'in Auckland, NZ', product: 'Style B · Boutique White', img: {{ 'stand-white-cafe.png' | asset_url | json }} },
+      { name: 'Ethan', loc: 'in Chicago, IL', product: 'Style B · Noir Black', img: {{ 'stand-black-tiktok.png' | asset_url | json }} }
+    ];
+    var AGOS = ['About 10 seconds ago', 'A minute ago', '2 minutes ago', '4 minutes ago', '8 minutes ago', '12 minutes ago', '18 minutes ago'];
+    var rand = function (min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; };
+    var idx = rand(0, ORDERS.length - 1);
+    var closed = false;
+    var timers = [];
+    var card = root.querySelector('.tfr-proof__card');
+
+    function showNext() {
+      if (closed) return;
+      var o = ORDERS[idx % ORDERS.length];
+      idx++;
+      root.querySelector('[data-tfr-proof-img]').src = o.img;
+      root.querySelector('[data-tfr-proof-img]').alt = o.product;
+      root.querySelector('[data-tfr-proof-name]').textContent = o.name;
+      root.querySelector('[data-tfr-proof-loc]').textContent = o.loc;
+      root.querySelector('[data-tfr-proof-product]').textContent = o.product;
+      root.querySelector('[data-tfr-proof-ago]').textContent = AGOS[rand(0, AGOS.length - 1)];
+      root.hidden = false;
+      card.classList.remove('tfr-proof__card--in');
+      void card.offsetWidth;
+      card.classList.add('tfr-proof__card--in');
+      timers.push(setTimeout(function () {
+        root.hidden = true;
+        timers.push(setTimeout(showNext, rand(8000, 15000)));
+      }, 6000));
+    }
+
+    root.querySelector('[data-tfr-proof-close]').addEventListener('click', function () {
+      closed = true;
+      timers.forEach(clearTimeout);
+      root.hidden = true;
+    });
+
+    timers.push(setTimeout(showNext, 5000));
+  })();
+</script>

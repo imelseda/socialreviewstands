@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "tfr-main-cart" }
+  },
+  "order": ["main"]
+}
