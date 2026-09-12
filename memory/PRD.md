@@ -44,6 +44,10 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - SEO: canonical + og:url = https://tapfivereview.com/, og:image/twitter:image now ABSOLUTE (https://tapfivereview.com/images/og-cover.png), title/author/site_name updated. og-cover.png regenerated with TapFive Review branding + domain.
 - PENDING MANUAL STEP: domain DNS/mapping must be connected in Emergent deployment settings for tapfivereview.com to serve the app; absolute OG URLs only resolve once the domain is live.
 
+## Iteration 5 (2026-09-12): Social proof
+- SocialProofPopup: rotating purchase toasts (12 mock buyers × 4 stand styles), first at 5s, visible 6s, gap 8–15s, dismissible — dark/gold themed.
+- SoldTodayBadge: seeded per-day count (60–99/day curve) that ticks live every 25–55s; placed in hero (under CTAs) and order section. NOTE: both are SIMULATED marketing figures, not real order data.
+
 ## Backlog
 - P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
 - P1: User to confirm/edit 90-day guarantee claim; email notification on enquiry (Resend); admin view of enquiries

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { Star, Ban, Timer, Volume2, VolumeX } from "lucide-react";
+import SoldTodayBadge from "./SoldTodayBadge";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -40,13 +41,16 @@ export default function Hero() {
           <motion.p {...fadeUp(0.2)} data-testid="hero-subtext" className="text-base md:text-lg text-[#94A3B8] max-w-xl mb-10 leading-relaxed">
             Asking for Google reviews is awkward — and customers who promise to leave one forget the second they walk out. The NFC 215 stand puts your review page one tap away, right on your counter. No apps. No searching. No monthly fees.
           </motion.p>
-          <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-4 mb-12">
+          <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-4 mb-5">
             <a data-testid="hero-order-button" href="#order" className="btn-gold">
               Get Your Stand Now
             </a>
             <a data-testid="hero-how-it-works-button" href="#how-it-works" className="btn-ghost-gold">
               See How It Works
             </a>
+          </motion.div>
+          <motion.div {...fadeUp(0.35)} className="mb-10">
+            <SoldTodayBadge />
           </motion.div>
           <motion.div {...fadeUp(0.4)} data-testid="hero-stats" className="grid grid-cols-3 gap-6 max-w-lg border-t border-[#D4AF37]/15 pt-8">
             {STATS.map((s) => (

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { VARIANTS } from "./data";
+import SoldTodayBadge from "./SoldTodayBadge";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -48,7 +49,8 @@ export default function OrderForm() {
           <p className="text-base text-[#94A3B8] max-w-lg mb-6 leading-relaxed">
             Your competitors are collecting 5-star reviews right now. Tell us your style and how many counters you're covering — we'll reply within 24 hours with pricing and delivery details.
           </p>
-          <p className="text-sm text-[#D4AF37] font-semibold mb-10">Secure Stripe checkout is being added — reserve yours today and we'll confirm your order personally.</p>
+          <p className="text-sm text-[#D4AF37] font-semibold mb-8">Secure Stripe checkout is being added — reserve yours today and we'll confirm your order personally.</p>
+          <SoldTodayBadge className="mb-8" testid="order-sold-today-badge" />
           <ul className="flex flex-col gap-5">
             {PERKS.map((p) => (
               <li key={p.text} className="flex items-center gap-3.5 text-sm font-medium text-[#F8F9FA]/85">

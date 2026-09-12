@@ -14,6 +14,7 @@ import Specs from "@/components/landing/Specs";
 import Faq from "@/components/landing/Faq";
 import OrderForm from "@/components/landing/OrderForm";
 import Footer from "@/components/landing/Footer";
+import SocialProofPopup from "@/components/landing/SocialProofPopup";
 
 function Landing() {
   return (
@@ -33,6 +34,7 @@ function Landing() {
         <OrderForm />
       </main>
       <Footer />
+      <SocialProofPopup />
     </div>
   );
 }
