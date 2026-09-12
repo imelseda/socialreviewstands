@@ -1,0 +1,78 @@
+{% comment %} TapFive Review — "The Problem" section. Add via Custom Liquid section. {% endcomment %}
+<div class="tfr-problem">
+  <div class="tfr-problem__inner">
+
+    <p class="tfr-problem__eyebrow">The problem</p>
+    <h2 class="tfr-problem__h2">Happy customers forget to review you. <span class="tfr-gold">Every single day.</span></h2>
+    <p class="tfr-problem__lead">They loved your service. They meant to leave a review. But between your counter and their couch, the intention dies — and every forgotten review is a customer your competitor wins instead.</p>
+
+    <div class="tfr-problem__cards">
+
+      <div class="tfr-problem__card">
+        <span class="tfr-problem__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="m8.5 8.5 5 5"/><path d="m13.5 8.5-5 5"/></svg>
+        </span>
+        <h3>The search struggle</h3>
+        <p>Open Google. Type your business name. Find the right listing. Tap through to the review box. Every extra step kills another review — 9 out of 10 never make it.</p>
+      </div>
+
+      <div class="tfr-problem__card">
+        <span class="tfr-problem__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="m9.5 9.5 5 5"/><path d="m14.5 9.5-5 5"/></svg>
+        </span>
+        <h3>The awkward ask</h3>
+        <p>Your staff hates begging for reviews. Customers feel put on the spot. So nobody asks, nobody reviews, and your rating stays frozen.</p>
+      </div>
+
+      <div class="tfr-problem__card">
+        <span class="tfr-problem__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/><path d="m4 4 3 3"/><path d="m20 4-3 3"/></svg>
+        </span>
+        <h3>The “I'll do it later”</h3>
+        <p>Later never comes. Customers mean it when they promise — then forget within 10 minutes of walking out your door.</p>
+      </div>
+
+    </div>
+
+    <div class="tfr-problem__strip">
+      <div class="tfr-problem__stat">
+        <p class="tfr-problem__num">74%</p>
+        <p class="tfr-problem__cap">of consumers only trust reviews from the last 3 months</p>
+      </div>
+      <div class="tfr-problem__stat">
+        <p class="tfr-problem__num">3.3×</p>
+        <p class="tfr-problem__cap">more likely to be clicked with 50+ reviews vs under 10</p>
+      </div>
+      <div class="tfr-problem__stat">
+        <p class="tfr-problem__num">2 min</p>
+        <p class="tfr-problem__cap">of manual searching vs 8 seconds with one tap</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .tfr-problem{ background:#0B0C10; border-top:1px solid rgba(212,175,55,.1); border-bottom:1px solid rgba(212,175,55,.1); padding:96px 24px; }
+  .tfr-problem__inner{ max-width:1200px; margin:0 auto; }
+
+  .tfr-problem__eyebrow{ font-size:.72rem; letter-spacing:.25em; text-transform:uppercase; color:#D4AF37; font-weight:600; margin:0 0 1rem; }
+  .tfr-problem__h2{ font-family:'Playfair Display',Georgia,serif; font-weight:700; line-height:1.12; color:#F8F9FA; font-size:clamp(2rem,4vw,3.2rem); letter-spacing:-.01em; max-width:46rem; margin:0 0 1.25rem; }
+  .tfr-gold{ background:linear-gradient(135deg,#F3E5AB 0%,#D4AF37 55%,#E6C200 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .tfr-problem__lead{ color:#94A3B8; font-size:1.05rem; line-height:1.7; max-width:42rem; margin:0 0 4rem; }
+
+  .tfr-problem__cards{ display:grid; grid-template-columns:1fr; gap:1.5rem; margin-bottom:4rem; }
+  @media (min-width:750px){ .tfr-problem__cards{ grid-template-columns:repeat(3,1fr); } }
+
+  .tfr-problem__card{ background:rgba(18,20,28,.8); border:1px solid rgba(212,175,55,.15); border-radius:1.5rem; padding:2rem; box-shadow:0 8px 32px rgba(0,0,0,.5); transition:transform .2s ease, border-color .2s ease; }
+  .tfr-problem__card:hover{ transform:translateY(-4px); border-color:rgba(212,175,55,.4); }
+  .tfr-problem__icon{ display:flex; align-items:center; justify-content:center; width:3rem; height:3rem; border-radius:1rem; background:rgba(212,175,55,.1); border:1px solid rgba(212,175,55,.25); color:#D4AF37; margin-bottom:2rem; }
+  .tfr-problem__card h3{ font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:1.25rem; color:#F8F9FA; letter-spacing:-.01em; margin:0 0 .75rem; }
+  .tfr-problem__card p{ color:#94A3B8; font-size:.875rem; line-height:1.7; margin:0; }
+
+  .tfr-problem__strip{ display:grid; grid-template-columns:1fr; gap:1px; background:rgba(212,175,55,.1); border:1px solid rgba(212,175,55,.2); border-radius:1.5rem; overflow:hidden; }
+  @media (min-width:750px){ .tfr-problem__strip{ grid-template-columns:repeat(3,1fr); } }
+  .tfr-problem__stat{ background:#12141C; padding:2.5rem 2rem; }
+  .tfr-problem__num{ font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:clamp(2.4rem,4vw,3.2rem); line-height:1; margin:0 0 .75rem; background:linear-gradient(135deg,#F3E5AB 0%,#D4AF37 55%,#E6C200 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .tfr-problem__cap{ color:#94A3B8; font-size:.875rem; line-height:1.5; margin:0; }
+</style>
