@@ -102,6 +102,36 @@ export const PRODUCTS = [
       { qty: 3, total: 45, link: "https://buy.stripe.com/3cI6oH0CidUNdJP1Oi8g005", best: true },
     ],
   },
+  {
+    id: "social-instagram",
+    name: "Instagram NFC Stand",
+    unit: "stand",
+    image: "/images/social-instagram.png",
+    badge: "New",
+    blurb: "Turn real-world foot traffic into an active Instagram community. One tap or scan and customers follow you on the spot.",
+    tags: ["NFC tap + QR scan", "Follows on the spot", "Counter & events"],
+    tiers: [{ qty: 1, total: 30, link: "https://buy.stripe.com/fZucN54Syg2VgW19gK8g00e" }],
+  },
+  {
+    id: "social-facebook",
+    name: "Facebook NFC Stand",
+    unit: "stand",
+    image: "/images/social-facebook.png",
+    badge: "New",
+    blurb: "A sleek acrylic display for checkout counters, reception desks and host stands — customers tap and land on your Facebook page.",
+    tags: ["NFC tap + QR scan", "Page likes & follows", "Reception & retail"],
+    tiers: [{ qty: 1, total: 30, link: "https://buy.stripe.com/14AdR970Gg2VbBHdx08g00c" }],
+  },
+  {
+    id: "social-tiktok",
+    name: "TikTok NFC Stand",
+    unit: "stand",
+    image: "/images/social-tiktok.png",
+    badge: "New",
+    blurb: "Supercharge your short-form reach — high-traffic counters, salons and pop-ups send customers straight to your TikTok profile.",
+    tags: ["NFC tap + QR scan", "Instant followers", "Salons & pop-ups"],
+    tiers: [{ qty: 1, total: 30, link: "https://buy.stripe.com/dRm3cv3Ou03X8pv50u8g00d" }],
+  },
 ];
 
 export const FAQS = [

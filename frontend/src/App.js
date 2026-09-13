@@ -20,6 +20,7 @@ import OrderForm from "@/components/landing/OrderForm";
 import Footer from "@/components/landing/Footer";
 import SocialProofPopup from "@/components/landing/SocialProofPopup";
 import Shop from "@/components/landing/Shop";
+import SocialStands from "@/components/landing/SocialStands";
 
 function Landing() {
   useEffect(() => {
@@ -59,6 +60,7 @@ function Landing() {
         <HowItWorks />
         <Benefits />
         <Shop />
+        <SocialStands />
         <Industries />
         <Reviews />
         <Offer />

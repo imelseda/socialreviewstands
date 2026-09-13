@@ -5,15 +5,15 @@ import { BadgeCheck, X } from "lucide-react";
 const ORDERS = [
   { name: "Marcus", location: "Austin, TX", product: "Stand · Black", img: "/images/stand-black-dims.png" },
   { name: "Priya", location: "London, UK", product: "Stand · White", img: "/images/stand-white-google.png" },
-  { name: "Chloe", location: "Sydney, AU", product: "NFC Card × 3", img: "/images/card-register.png" },
+  { name: "Chloe", location: "Sydney, AU", product: "Instagram Stand", img: "/images/social-instagram.png" },
   { name: "Jordan", location: "Toronto, CA", product: "Stand · Black × 3", img: "/images/stand-black-dims.png" },
   { name: "Sofia", location: "Miami, FL", product: "Stand · White × 2", img: "/images/stand-white-google.png" },
   { name: "Liam", location: "Dublin, IE", product: "NFC Card", img: "/images/card-closeup.png" },
   { name: "Aaliyah", location: "Atlanta, GA", product: "Stand · White", img: "/images/stand-white-cafe.png" },
   { name: "Noah", location: "Denver, CO", product: "Stand · Black", img: "/images/stand-black-dims.png" },
-  { name: "Emma", location: "Berlin, DE", product: "NFC Card × 2", img: "/images/card-register.png" },
+  { name: "Emma", location: "Berlin, DE", product: "TikTok Stand", img: "/images/social-tiktok.png" },
   { name: "Diego", location: "Los Angeles, CA", product: "Stand · White × 3", img: "/images/stand-white-google.png" },
-  { name: "Isla", location: "Auckland, NZ", product: "NFC Card × 3", img: "/images/card-closeup.png" },
+  { name: "Isla", location: "Auckland, NZ", product: "Facebook Stand", img: "/images/social-facebook.png" },
   { name: "Ethan", location: "Chicago, IL", product: "Stand · Black × 2", img: "/images/stand-black-tiktok.png" },
 ];
 

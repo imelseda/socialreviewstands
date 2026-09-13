@@ -62,6 +62,10 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - 3 products wired with 9 live Stripe payment links (buy.stripe.com): White/Black Stand 1×$29, 2×$54, 3×$69; NFC Card 1×$27, 2×$48, 3×$45. Shop section (#shop) with tier pills + buy buttons; hero/variants/offer CTAs → #shop. Popup products renamed to match.
 - Motion upgrade: lenis smooth momentum scroll (yarn add lenis, anchor clicks via lenis.scrollTo), masked line-by-line hero headline reveal, hero media parallax (useScroll/useTransform), slow editorial marquee after hero, "Chapter 0X ·" manifesto numbering on all section eyebrows, product image hover zoom.
 
+## Iteration 9 (2026-09-13): Social NFC stands
+- 3 new products at $30 each with Stripe links: Instagram (fZucN54Syg2VgW19gK8g00e), Facebook (14AdR970Gg2VbBHdx08g00c), TikTok (dRm3cv3Ou03X8pv50u8g00d). Single tier each.
+- New SocialStands section (#social, after Shop): "Not just reviews. Follows, too." + 3 platform cards with brand-tinted icons + social-trio.jpg. Shop now 6 products (2×3 grid), heading "Pick your growth machine." Popup orders include social stands. New images: social-instagram/facebook/tiktok.png, social-trio.jpg.
+
 ## Backlog
 - P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
 - P1: User to confirm/edit 90-day guarantee claim; email notification on enquiry (Resend); admin view of enquiries

@@ -89,10 +89,10 @@ export default function Shop() {
       <div className="max-w-7xl mx-auto px-6">
         <p data-testid="shop-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Pricing</p>
         <h2 data-testid="shop-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-[#F8F9FA]">
-          Pick your <span className="gold-text">review machine.</span>
+          Pick your <span className="gold-text">growth machine.</span>
         </h2>
         <p className="text-base text-[#94A3B8] max-w-2xl mb-16 leading-relaxed">
-          One-time purchase. No subscriptions, no monthly fees, no per-review charges — ever. Bundle up and put a review point on every counter.
+          Review stands, NFC cards, and social follow signs — every product is a one-time purchase. No subscriptions, no monthly fees, no per-tap charges — ever. Bundle up and put a growth point on every counter.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {PRODUCTS.map((p, i) => (

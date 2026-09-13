@@ -28,16 +28,16 @@ export default function Specs() {
               </div>
             ))}
           </dl>
-        </div>
+        </div> 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]"
-        >
+          className="rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)] lg:mt-[165px]"
+        > 
           <img
-            src="/images/stand-black-dims.png"
+            src="/images/google-review-stand-black-white.jpg"
             alt="Black NFC 215 stand with dimension annotations"
             data-testid="specs-product-image"
             className="w-full max-h-[70vh] object-cover"
