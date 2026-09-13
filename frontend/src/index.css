@@ -111,6 +111,13 @@
     margin: 0 auto;
     animation: tfr-marquee 42s linear infinite;
 }
+.marquee-track--static {
+    animation: none;
+    justify-content: center;
+}
+.marquee-track--static .marquee-half:last-child {
+    display: none;
+}
 .marquee-half {
     display: flex;
     align-items: center;
@@ -120,10 +127,10 @@
 .marquee-item {
     display: flex;
     align-items: center;
-    gap: 2.6rem;
+    gap: 1.0rem;
     font-family: 'Playfair Display', Georgia, serif;
     font-weight: 700;
-    font-size: clamp(1.05rem, 1.6vw, 1.4rem);
+    font-size: clamp(1.00rem, 1.6vw, 1.4rem);
     white-space: nowrap;
     color: #F8F9FA;
     letter-spacing: 0;
