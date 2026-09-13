@@ -114,6 +114,7 @@
 .marquee-track--static {
     animation: none;
     justify-content: center;
+    transform: translateX(30px);
 }
 .marquee-track--static .marquee-half:last-child {
     display: none;
