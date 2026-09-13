@@ -31,7 +31,7 @@ export default function Offer() {
               </li>
             ))}
           </ul>
-          <a data-testid="offer-cta-button" href="#order" className="btn-gold">
+          <a data-testid="offer-cta-button" href="#shop" className="btn-gold">
             Claim Your Stand Now
           </a>
         </div>

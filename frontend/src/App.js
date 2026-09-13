@@ -17,6 +17,7 @@ import Faq from "@/components/landing/Faq";
 import OrderForm from "@/components/landing/OrderForm";
 import Footer from "@/components/landing/Footer";
 import SocialProofPopup from "@/components/landing/SocialProofPopup";
+import Shop from "@/components/landing/Shop";
 
 function Landing() {
   return (
@@ -28,6 +29,7 @@ function Landing() {
         <HowItWorks />
         <Benefits />
         <Variants />
+        <Shop />
         <Industries />
         <Reviews />
         <Offer />

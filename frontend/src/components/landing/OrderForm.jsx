@@ -49,7 +49,9 @@ export default function OrderForm() {
           <p className="text-base text-[#94A3B8] max-w-lg mb-6 leading-relaxed">
             Your competitors are collecting 5-star reviews right now. Tell us your style and how many counters you're covering — we'll reply within 24 hours with pricing and delivery details.
           </p>
-          <p className="text-sm text-[#D4AF37] font-semibold mb-8">Secure Stripe checkout is being added — reserve yours today and we'll confirm your order personally.</p>
+          <p className="text-sm text-[#D4AF37] font-semibold mb-8">
+            Ready to buy now? <a href="#shop" data-testid="order-shop-link" className="underline decoration-[#D4AF37]/40 hover:decoration-[#D4AF37]">See instant checkout pricing above</a> — or send the form for bulk orders and questions.
+          </p>
           <SoldTodayBadge className="mb-8" testid="order-sold-today-badge" />
           <ul className="flex flex-col gap-5">
             {PERKS.map((p) => (

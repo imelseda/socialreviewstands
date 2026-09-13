@@ -42,7 +42,7 @@ export default function Hero() {
             Asking for Google reviews is awkward — and customers who promise to leave one forget the second they walk out. The NFC 215 stand puts your review page one tap away, right on your counter. No apps. No searching. No monthly fees.
           </motion.p>
           <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-4 mb-5">
-            <a data-testid="hero-order-button" href="#order" className="btn-gold">
+            <a data-testid="hero-order-button" href="#shop" className="btn-gold">
               Get Your Stand Now
             </a>
             <a data-testid="hero-how-it-works-button" href="#how-it-works" className="btn-ghost-gold">

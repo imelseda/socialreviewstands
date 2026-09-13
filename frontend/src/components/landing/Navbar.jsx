@@ -5,8 +5,8 @@ const LINKS = [
   { label: "The Problem", href: "#problem" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Styles", href: "#variants" },
+  { label: "Pricing", href: "#shop" },
   { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {

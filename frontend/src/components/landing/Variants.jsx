@@ -72,7 +72,7 @@ export default function Variants() {
               </li>
             ))}
           </ul>
-          <a data-testid="variants-order-button" href="#order" className="btn-gold">
+          <a data-testid="variants-order-button" href="#shop" className="btn-gold">
             Get the {selected.short}
           </a>
         </div>

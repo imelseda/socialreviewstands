@@ -56,6 +56,54 @@ export const REVIEWS = [
   },
 ];
 
+export const PRODUCTS = [
+  {
+    id: "stand-white",
+    name: "Google Review Stand · White",
+    unit: "stand",
+    stripeProduct: "prod_VFkUO1Vp2T6Vla",
+    image: "/images/stand-white-google.png",
+    badge: "Best Seller",
+    blurb: "The countertop classic. Pearl white stand with the Google review layout customers already know and trust.",
+    tags: ["NFC tap + QR scan", "Counter & desk", "30-sec setup"],
+    tiers: [
+      { qty: 1, total: 29, link: "" },
+      { qty: 2, total: 54, link: "" },
+      { qty: 3, total: 69, link: "", best: true },
+    ],
+  },
+  {
+    id: "stand-black",
+    name: "Google Review Stand · Black",
+    unit: "stand",
+    stripeProduct: "prod_VFkawywepaFDJk",
+    image: "/images/stand-black-dims.png",
+    badge: null,
+    blurb: "Obsidian black metallic finish with high-contrast print — commands attention on any counter or front desk.",
+    tags: ["NFC tap + QR scan", "Counter & desk", "30-sec setup"],
+    tiers: [
+      { qty: 1, total: 29, link: "" },
+      { qty: 2, total: 54, link: "" },
+      { qty: 3, total: 69, link: "", best: true },
+    ],
+  },
+  {
+    id: "card",
+    name: "Google Review NFC Card",
+    unit: "card",
+    stripeProduct: "prod_VFkecLbc0XbYxO",
+    image: "/images/card-register.png",
+    badge: "New",
+    blurb: "The waterproof NFC sticker card — stick it on doors, tables, mirrors or tills, or hand it over with the bill. Same tap-to-review magic, zero footprint.",
+    tags: ["Waterproof sticker", "NFC tap", "Easy setup"],
+    tiers: [
+      { qty: 1, total: 27, link: "" },
+      { qty: 2, total: 49, link: "" },
+      { qty: 3, total: 45, link: "", best: true },
+    ],
+  },
+];
+
 export const FAQS = [
   {
     q: "How does the stand actually work?",

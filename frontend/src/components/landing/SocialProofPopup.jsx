@@ -3,18 +3,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BadgeCheck, X } from "lucide-react";
 
 const ORDERS = [
-  { name: "Marcus", location: "Austin, TX", product: "Style A · Obsidian Black", img: "/images/stand-black-dims.png" },
-  { name: "Priya", location: "London, UK", product: "Style A · Pearl White", img: "/images/stand-white-google.png" },
-  { name: "Chloe", location: "Sydney, AU", product: "Style B · Boutique White", img: "/images/stand-white-cafe.png" },
-  { name: "Jordan", location: "Toronto, CA", product: "Style B · Noir Black", img: "/images/stand-black-tiktok.png" },
-  { name: "Sofia", location: "Miami, FL", product: "Style A · Obsidian Black", img: "/images/stand-black-dims.png" },
-  { name: "Liam", location: "Dublin, IE", product: "Style A · Pearl White", img: "/images/stand-white-google.png" },
-  { name: "Aaliyah", location: "Atlanta, GA", product: "Style B · Boutique White", img: "/images/stand-white-cafe.png" },
-  { name: "Noah", location: "Denver, CO", product: "Style A · Obsidian Black", img: "/images/stand-black-dims.png" },
-  { name: "Emma", location: "Berlin, DE", product: "Style B · Noir Black", img: "/images/stand-black-tiktok.png" },
-  { name: "Diego", location: "Los Angeles, CA", product: "Style A · Pearl White", img: "/images/stand-white-google.png" },
-  { name: "Isla", location: "Auckland, NZ", product: "Style B · Boutique White", img: "/images/stand-white-cafe.png" },
-  { name: "Ethan", location: "Chicago, IL", product: "Style B · Noir Black", img: "/images/stand-black-tiktok.png" },
+  { name: "Marcus", location: "Austin, TX", product: "Stand · Black", img: "/images/stand-black-dims.png" },
+  { name: "Priya", location: "London, UK", product: "Stand · White", img: "/images/stand-white-google.png" },
+  { name: "Chloe", location: "Sydney, AU", product: "NFC Card × 3", img: "/images/card-register.png" },
+  { name: "Jordan", location: "Toronto, CA", product: "Stand · Black × 3", img: "/images/stand-black-dims.png" },
+  { name: "Sofia", location: "Miami, FL", product: "Stand · White × 2", img: "/images/stand-white-google.png" },
+  { name: "Liam", location: "Dublin, IE", product: "NFC Card", img: "/images/card-closeup.png" },
+  { name: "Aaliyah", location: "Atlanta, GA", product: "Stand · White", img: "/images/stand-white-cafe.png" },
+  { name: "Noah", location: "Denver, CO", product: "Stand · Black", img: "/images/stand-black-dims.png" },
+  { name: "Emma", location: "Berlin, DE", product: "NFC Card × 2", img: "/images/card-register.png" },
+  { name: "Diego", location: "Los Angeles, CA", product: "Stand · White × 3", img: "/images/stand-white-google.png" },
+  { name: "Isla", location: "Auckland, NZ", product: "NFC Card × 3", img: "/images/card-closeup.png" },
+  { name: "Ethan", location: "Chicago, IL", product: "Stand · Black × 2", img: "/images/stand-black-tiktok.png" },
 ];
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
