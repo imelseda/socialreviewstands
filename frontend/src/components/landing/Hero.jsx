@@ -46,7 +46,7 @@ export default function Hero() {
 
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
 
-  const mediaY = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const mediaY = useTransform(scrollYProgress, [0, 1], [-70, 20]);
 
 
 
