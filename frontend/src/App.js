@@ -1,6 +1,8 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
+import PrivacyPage from "@/pages/PrivacyPage";
+import TermsPage from "@/pages/TermsPage";
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
 import Problem from "@/components/landing/Problem";
@@ -45,6 +47,8 @@ function App() {
       <Toaster position="top-center" richColors theme="dark" />
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
       </Routes>
     </BrowserRouter>
   );

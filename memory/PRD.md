@@ -54,6 +54,10 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - All JSON + section schemas validated. NOT tested in a live Shopify store (no store access).
 - Custom-liquid guides for hero/problem/solution also saved in /app/memory/.
 
+## Iteration 7 (2026-09-13): Legal pages
+- Added /privacy (Privacy Policy) and /terms (Terms of Service) — React pages with shared LegalLayout (logo + back link + Footer), gold/obsidian legal-prose styles, footer links added. Copy covers enquiry form data, no-review-collection stance, 90-day guarantee, shipping 7–9 days, Google non-affiliation. NOTE: template legal copy, not lawyer-reviewed.
+- Shopify direction abandoned by user ("forget about shopify"); theme zip remains in repo root.
+
 ## Backlog
 - P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
 - P1: User to confirm/edit 90-day guarantee claim; email notification on enquiry (Resend); admin view of enquiries

@@ -17,6 +17,8 @@ export default function Footer() {
             <a data-testid="footer-link-variants" href="#variants" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">Styles</a>
             <a data-testid="footer-link-reviews" href="#reviews" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">Reviews</a>
             <a data-testid="footer-link-order" href="#order" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">Order</a>
+            <a data-testid="footer-link-privacy" href="/privacy" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">Privacy</a>
+            <a data-testid="footer-link-terms" href="/terms" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">Terms</a>
           </nav>
         </div>
         <div className="gold-divider mb-8" aria-hidden="true" />
