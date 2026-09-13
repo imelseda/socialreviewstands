@@ -44,7 +44,7 @@ export default function Benefits() {
   return (
     <section id="benefits" data-testid="benefits-section" className="py-24 lg:py-32 bg-[#0B0C10] border-y border-[#D4AF37]/10">
       <div className="max-w-7xl mx-auto px-6">
-        <p data-testid="benefits-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 03 · Why businesses choose it</p>
+        <p data-testid="benefits-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Why businesses choose it</p>
         <h2 data-testid="benefits-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-16 max-w-3xl text-[#F8F9FA]">
           One stand. Zero effort. <span className="gold-text">Reviews on autopilot.</span>
         </h2>

@@ -42,7 +42,7 @@ export default function OrderForm() {
       <div className="noise-overlay" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 relative">
         <div>
-          <p data-testid="order-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 10 · Get yours</p>
+          <p data-testid="order-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Get yours</p>
           <h2 data-testid="order-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-[#F8F9FA]">
             Stop losing reviews. <span className="gold-text">Start collecting them.</span>
           </h2>

@@ -29,7 +29,7 @@ export default function Problem() {
   return (
     <section id="problem" data-testid="problem-section" className="py-24 lg:py-32 bg-[#0B0C10] border-y border-[#D4AF37]/10">
       <div className="max-w-7xl mx-auto px-6">
-        <p data-testid="problem-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 01 · The problem</p>
+        <p data-testid="problem-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">The problem</p>
         <h2 data-testid="problem-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 max-w-3xl text-[#F8F9FA]">
           Happy customers forget to review you. <span className="gold-text">Every single day.</span>
         </h2>

@@ -87,7 +87,7 @@ export default function Shop() {
   return (
     <section id="shop" data-testid="shop-section" className="py-24 lg:py-32 bg-[#0B0C10] border-y border-[#D4AF37]/10">
       <div className="max-w-7xl mx-auto px-6">
-        <p data-testid="shop-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 04 · Pricing</p>
+        <p data-testid="shop-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Pricing</p>
         <h2 data-testid="shop-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-[#F8F9FA]">
           Pick your <span className="gold-text">review machine.</span>
         </h2>

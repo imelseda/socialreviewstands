@@ -27,7 +27,7 @@ export default function HowItWorks() {
     <section id="how-it-works" data-testid="how-it-works-section" className="py-24 lg:py-32 bg-[#0A0B0E]">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <div>
-        <p data-testid="how-it-works-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 02 · The solution</p>
+        <p data-testid="how-it-works-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">The solution</p>
           <h2 data-testid="how-it-works-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-[#F8F9FA]">
             Tap. Review. Done. <span className="gold-text">It's really that simple.</span>
           </h2>
