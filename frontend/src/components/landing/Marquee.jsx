@@ -9,7 +9,7 @@ export default function Marquee() {
             {ITEMS.map((item, i) => (
               <span className="marquee-item" key={item}>
                 <span className={i % 2 ? "text-[#D4AF37]" : "text-[#F8F9FA]"}>{item}</span>
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <svg viewBox="0 0 26 26" fill="currentColor" aria-hidden="true">
                   <path d="M12 3l7 9-7 9-7-9z" />
                 </svg>
               </span>
