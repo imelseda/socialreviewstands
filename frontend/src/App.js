@@ -1,8 +1,11 @@
 import "@/App.css";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
+import Lenis from "lenis";
 import PrivacyPage from "@/pages/PrivacyPage";
 import TermsPage from "@/pages/TermsPage";
+import Marquee from "@/components/landing/Marquee";
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
 import Problem from "@/components/landing/Problem";
@@ -20,11 +23,39 @@ import SocialProofPopup from "@/components/landing/SocialProofPopup";
 import Shop from "@/components/landing/Shop";
 
 function Landing() {
+  useEffect(() => {
+    const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+    let raf;
+    const loop = (t) => {
+      lenis.raf(t);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+
+    const onClick = (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const el = document.querySelector(a.getAttribute("href"));
+      if (el) {
+        e.preventDefault();
+        lenis.scrollTo(el, { offset: -64 });
+      }
+    };
+    document.addEventListener("click", onClick);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      document.removeEventListener("click", onClick);
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0A0B0E] text-[#F8F9FA]">
       <Navbar />
       <main>
         <Hero />
+        <Marquee />
         <Problem />
         <HowItWorks />
         <Benefits />

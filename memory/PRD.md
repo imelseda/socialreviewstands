@@ -58,6 +58,10 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Added /privacy (Privacy Policy) and /terms (Terms of Service) — React pages with shared LegalLayout (logo + back link + Footer), gold/obsidian legal-prose styles, footer links added. Copy covers enquiry form data, no-review-collection stance, 90-day guarantee, shipping 7–9 days, Google non-affiliation. NOTE: template legal copy, not lawyer-reviewed.
 - Shopify direction abandoned by user ("forget about shopify"); theme zip remains in repo root.
 
+## Iteration 8 (2026-09-13): Stripe checkout + award-level motion
+- 3 products wired with 9 live Stripe payment links (buy.stripe.com): White/Black Stand 1×$29, 2×$54, 3×$69; NFC Card 1×$27, 2×$48, 3×$45. Shop section (#shop) with tier pills + buy buttons; hero/variants/offer CTAs → #shop. Popup products renamed to match.
+- Motion upgrade: lenis smooth momentum scroll (yarn add lenis, anchor clicks via lenis.scrollTo), masked line-by-line hero headline reveal, hero media parallax (useScroll/useTransform), slow editorial marquee after hero, "Chapter 0X ·" manifesto numbering on all section eyebrows, product image hover zoom.
+
 ## Backlog
 - P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
 - P1: User to confirm/edit 90-day guarantee claim; email notification on enquiry (Resend); admin view of enquiries

@@ -67,9 +67,9 @@ export const PRODUCTS = [
     blurb: "The countertop classic. Pearl white stand with the Google review layout customers already know and trust.",
     tags: ["NFC tap + QR scan", "Counter & desk", "30-sec setup"],
     tiers: [
-      { qty: 1, total: 29, link: "" },
-      { qty: 2, total: 54, link: "" },
-      { qty: 3, total: 69, link: "", best: true },
+      { qty: 1, total: 29, link: "https://buy.stripe.com/cNi14n0Ci3g96hndx08g009" },
+      { qty: 2, total: 54, link: "https://buy.stripe.com/eVq14n1GmdUN0X31Oi8g00a" },
+      { qty: 3, total: 69, link: "https://buy.stripe.com/14A14net88At49fdx08g00b", best: true },
     ],
   },
   {
@@ -82,9 +82,9 @@ export const PRODUCTS = [
     blurb: "Obsidian black metallic finish with high-contrast print — commands attention on any counter or front desk.",
     tags: ["NFC tap + QR scan", "Counter & desk", "30-sec setup"],
     tiers: [
-      { qty: 1, total: 29, link: "" },
-      { qty: 2, total: 54, link: "" },
-      { qty: 3, total: 69, link: "", best: true },
+      { qty: 1, total: 29, link: "https://buy.stripe.com/00waEXet8eYR49fakO8g006" },
+      { qty: 2, total: 54, link: "https://buy.stripe.com/8x2eVd98O9Ex5dj3Wq8g007" },
+      { qty: 3, total: 69, link: "https://buy.stripe.com/eVq6oHbgW6sl9tz8cG8g008", best: true },
     ],
   },
   {
@@ -97,9 +97,9 @@ export const PRODUCTS = [
     blurb: "The waterproof NFC sticker card — stick it on doors, tables, mirrors or tills, or hand it over with the bill. Same tap-to-review magic, zero footprint.",
     tags: ["Waterproof sticker", "NFC tap", "Easy setup"],
     tiers: [
-      { qty: 1, total: 27, link: "" },
-      { qty: 2, total: 49, link: "" },
-      { qty: 3, total: 45, link: "", best: true },
+      { qty: 1, total: 27, link: "https://buy.stripe.com/eVqfZhdp48AtgW1fF88g004" },
+      { qty: 2, total: 48, link: "https://buy.stripe.com/bJe3cvgBgbMF9tzakO8g003" },
+      { qty: 3, total: 45, link: "https://buy.stripe.com/3cI6oH0CidUNdJP1Oi8g005", best: true },
     ],
   },
 ];

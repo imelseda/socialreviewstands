@@ -21,7 +21,7 @@ function ProductCard({ product, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.55, delay: index * 0.12, ease: "easeOut" }}
-      className="card-luxe relative flex flex-col overflow-hidden !p-0"
+      className="card-luxe group relative flex flex-col overflow-hidden !p-0"
     >
       {product.badge && (
         <span data-testid={`product-badge-${product.id}`} className="absolute top-4 left-4 z-10 rounded-full bg-gradient-to-br from-[#F3E5AB] via-[#D4AF37] to-[#996515] text-[#0A0B0E] text-[11px] font-bold uppercase tracking-[0.15em] px-3.5 py-1.5 shadow-lg">
@@ -29,7 +29,7 @@ function ProductCard({ product, index }) {
         </span>
       )}
       <div className="h-60 overflow-hidden shrink-0">
-        <img src={product.image} alt={product.name} data-testid={`product-image-${product.id}`} className="w-full h-full object-cover" loading="lazy" />
+        <img src={product.image} alt={product.name} data-testid={`product-image-${product.id}`} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" />
       </div>
       <div className="flex flex-col gap-4 p-7 flex-1">
         <h3 className="font-display text-xl font-bold tracking-tight text-[#F8F9FA]">{product.name}</h3>
@@ -87,7 +87,7 @@ export default function Shop() {
   return (
     <section id="shop" data-testid="shop-section" className="py-24 lg:py-32 bg-[#0B0C10] border-y border-[#D4AF37]/10">
       <div className="max-w-7xl mx-auto px-6">
-        <p data-testid="shop-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Pricing</p>
+        <p data-testid="shop-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 05 · Pricing</p>
         <h2 data-testid="shop-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-[#F8F9FA]">
           Pick your <span className="gold-text">review machine.</span>
         </h2>

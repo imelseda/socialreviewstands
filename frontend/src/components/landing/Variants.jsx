@@ -31,7 +31,7 @@ export default function Variants() {
           </AnimatePresence>
         </div>
         <div>
-          <p data-testid="variants-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Choose your finish</p>
+          <p data-testid="variants-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 04 · Choose your finish</p>
           <h2 data-testid="variants-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-[#F8F9FA]">
             Four finishes. <span className="gold-text">One reputation machine.</span>
           </h2>

@@ -5,7 +5,7 @@ export default function Faq() {
   return (
     <section id="faq" data-testid="faq-section" className="py-24 lg:py-32 bg-[#0B0C10] border-y border-[#D4AF37]/10">
       <div className="max-w-3xl mx-auto px-6">
-        <p data-testid="faq-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">FAQ</p>
+        <p data-testid="faq-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 10 · FAQ</p>
         <h2 data-testid="faq-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-12 text-[#F8F9FA]">
           Got questions? <span className="gold-text">Good.</span>
         </h2>
