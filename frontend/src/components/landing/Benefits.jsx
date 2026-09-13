@@ -6,7 +6,7 @@ const BENEFITS = [
     icon: CircleDollarSign,
     title: "One purchase. $0 monthly fees.",
     text: "Buy it once and collect unlimited reviews forever. While competitors pay $50–200 a month for review software, you pay nothing — ever again.",
-    span: "md:col-span-2",
+    span: "",
   },
   {
     icon: Smartphone,
