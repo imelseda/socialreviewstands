@@ -14,7 +14,6 @@ export default function Footer() {
           <nav className="flex flex-wrap gap-x-8 gap-y-3">
             <a data-testid="footer-link-problem" href="#problem" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">The Problem</a>
             <a data-testid="footer-link-how-it-works" href="#how-it-works" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">How It Works</a>
-            <a data-testid="footer-link-variants" href="#variants" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">Styles</a>
             <a data-testid="footer-link-pricing" href="#shop" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">Pricing</a>
             <a data-testid="footer-link-reviews" href="#reviews" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">Reviews</a>
             <a data-testid="footer-link-order" href="#order" className="text-sm text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">Order</a>

@@ -14,7 +14,7 @@ export default function Reviews() {
   return (
     <section id="reviews" data-testid="reviews-section" className="py-24 lg:py-32 bg-[#0A0B0E]">
       <div className="max-w-7xl mx-auto px-6">
-        <p data-testid="reviews-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 07 · Verified buyer reviews</p>
+        <p data-testid="reviews-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 06 · Verified buyer reviews</p>
         <h2 data-testid="reviews-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 max-w-3xl text-[#F8F9FA]">
           Real businesses. <span className="gold-text">Real 5-star results.</span>
         </h2>

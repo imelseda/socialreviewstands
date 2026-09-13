@@ -8,7 +8,7 @@ export default function Industries() {
   return (
     <section id="industries" data-testid="industries-section" className="py-24 lg:py-28 bg-[#0B0C10] border-y border-[#D4AF37]/10">
       <div className="max-w-7xl mx-auto px-6">
-        <p data-testid="industries-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 06 · Who it's for</p>
+        <p data-testid="industries-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 05 · Who it's for</p>
         <h2 data-testid="industries-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 max-w-3xl text-[#F8F9FA]">
           Built for any business with a counter, <span className="gold-text">desk, or door.</span>
         </h2>

@@ -11,7 +11,6 @@ import Hero from "@/components/landing/Hero";
 import Problem from "@/components/landing/Problem";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Benefits from "@/components/landing/Benefits";
-import Variants from "@/components/landing/Variants";
 import Industries from "@/components/landing/Industries";
 import Reviews from "@/components/landing/Reviews";
 import Offer from "@/components/landing/Offer";
@@ -59,7 +58,6 @@ function Landing() {
         <Problem />
         <HowItWorks />
         <Benefits />
-        <Variants />
         <Shop />
         <Industries />
         <Reviews />

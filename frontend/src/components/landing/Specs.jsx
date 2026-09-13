@@ -16,7 +16,7 @@ export default function Specs() {
     <section id="specs" data-testid="specs-section" className="py-24 lg:py-32 bg-[#0A0B0E]">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <p data-testid="specs-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 09 · Specifications</p>
+          <p data-testid="specs-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 08 · Specifications</p>
           <h2 data-testid="specs-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-12 text-[#F8F9FA]">
             Small footprint. <span className="gold-text">Serious hardware.</span>
           </h2>

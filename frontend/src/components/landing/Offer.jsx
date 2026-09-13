@@ -14,7 +14,7 @@ export default function Offer() {
       <div className="noise-overlay" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative">
         <div>
-          <p data-testid="offer-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 08 · The offer</p>
+          <p data-testid="offer-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">Chapter 07 · The offer</p>
           <h2 data-testid="offer-heading" className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-[#F8F9FA]">
             Your 24/7 review machine. <span className="gold-text">One purchase. Zero fees.</span>
           </h2>
