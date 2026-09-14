@@ -66,6 +66,10 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - 3 new products at $30 each with Stripe links: Instagram (fZucN54Syg2VgW19gK8g00e), Facebook (14AdR970Gg2VbBHdx08g00c), TikTok (dRm3cv3Ou03X8pv50u8g00d). Single tier each.
 - New SocialStands section (#social, after Shop): "Not just reviews. Follows, too." + 3 platform cards with brand-tinted icons + social-trio.jpg. Shop now 6 products (2×3 grid), heading "Pick your growth machine." Popup orders include social stands. New images: social-instagram/facebook/tiktok.png, social-trio.jpg.
 
+## Iteration 10 (2026-09-14): GitHub push + domain status
+- Code pushed to https://github.com/imelseda/tap5reviews (branch main, via one-time user PAT; token used once and removed from git remote config).
+- User reported Stripe redirects + live purchase test + domain launch done. HOWEVER: https://tapfivereview.com returned 403 Forbidden when checked (curl + browser) — DNS/proxy misconfiguration or host block; unresolved at time of check.
+
 ## Backlog
 - P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
 - P1: User to confirm/edit 90-day guarantee claim; email notification on enquiry (Resend); admin view of enquiries
