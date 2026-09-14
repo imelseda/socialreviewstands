@@ -70,6 +70,11 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Code pushed to https://github.com/imelseda/tap5reviews (branch main, via one-time user PAT; token used once and removed from git remote config).
 - User reported Stripe redirects + live purchase test + domain launch done. HOWEVER: https://tapfivereview.com returned 403 Forbidden when checked (curl + browser) — DNS/proxy misconfiguration or host block; unresolved at time of check.
 
+## Iteration 11 (2026-09-14): LIVE on Netlify
+- tapfivereview.com now serves the site via Netlify (403 fixed). Deploy config: netlify.toml (base frontend, yarn build, publish build, REACT_APP_BACKEND_URL → preview backend) + public/_redirects for SPA routes.
+- Verified live E2E: hero video playing, marquee all 6 phrases, 6 product cards with correct Stripe links, reviews video loads, /thank-you + /privacy resolve, social proof popup + sold-today badge working.
+- NOTE: enquiry form posts to the Emergent preview backend (REACT_APP_BACKEND_URL). If the preview backend is ever shut down, the form breaks — Stripe checkout unaffected. Long-term: host backend or move form to Netlify Forms.
+
 ## Backlog
 - P0: Stripe checkout buttons (user confirmed Stripe, "buttons later in the process") — needs pricing decision
 - P1: User to confirm/edit 90-day guarantee claim; email notification on enquiry (Resend); admin view of enquiries
