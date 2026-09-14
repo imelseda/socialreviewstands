@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 import Lenis from "lenis";
 import PrivacyPage from "@/pages/PrivacyPage";
 import TermsPage from "@/pages/TermsPage";
+import ThankYouPage from "@/pages/ThankYouPage";
 import Marquee from "@/components/landing/Marquee";
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
@@ -82,6 +83,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/thank-you" element={<ThankYouPage />} />
       </Routes>
     </BrowserRouter>
   );

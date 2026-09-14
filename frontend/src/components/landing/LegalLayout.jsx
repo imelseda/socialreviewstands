@@ -20,7 +20,7 @@ export default function LegalLayout({ eyebrow, title, updated, children, testid 
       <main className="max-w-3xl mx-auto px-6 py-20 lg:py-28" data-testid={testid}>
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">{eyebrow}</p>
         <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-3">{title}</h1>
-        <p className="text-xs text-[#94A3B8]/70 mb-12">Last updated: {updated}</p>
+        {updated ? <p className="text-xs text-[#94A3B8]/70 mb-12">Last updated: {updated}</p> : <div className="mb-12" />}
         <div className="legal-prose">{children}</div>
       </main>
       <Footer />
