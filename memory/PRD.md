@@ -93,3 +93,10 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - NOT changed: /app/shopify-theme (legacy, inactive), favicon (generic gold star, no brand text)
 - Verified: testing_agent iteration_1.json — 26/26 frontend checks passed, zero TapFive occurrences on active site
 - PENDING (user-side): push to GitHub (Save to Github) to trigger Netlify rebuild; point Netlify custom domain to socialreviewstands.com; update Stripe Payment Link after-payment redirects to https://socialreviewstands.com/thank-you; revoke the previously exposed GitHub PAT
+
+## Iteration: GitHub repo migration (2026-10-02)
+- Repo pushed to NEW remote: github.com/imelseda/socialreviewstands (main @ 0354629, includes full rebrand)
+- Old remote imelseda/tap5reviews abandoned; local origin retargeted (no credentials stored in remote URL)
+- Auth: user-supplied classic PAT (ghp_...) used for one-off push after fine-grained PAT lacked Contents:write — BOTH tokens were pasted in chat and must be revoked by the user
+- Verified: remote HEAD matches local, no token leaked to .git/config or any tracked file
+- PENDING (user-side): relink Netlify site to the new repo (Build & deploy → Link repository), add custom domain socialreviewstands.com, update Stripe Payment Link redirects to https://socialreviewstands.com/thank-you, revoke both chat-exposed GitHub tokens
