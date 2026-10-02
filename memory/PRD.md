@@ -1,4 +1,4 @@
-# TapReview 215 — PRD
+# Social Media Review Stands — PRD
 
 ## Original Problem Statement
 Website promoting the Google NFC review stand (NFC 215 card): programmable NFC + QR countertop stand that boosts Google reviews. Multi-platform (Google, Facebook, Instagram, LINE, TikTok), Style A/B in black/white, CE certified, 1pc/pack, eco-friendly, Model 215. Real buyer reviews included.
@@ -84,3 +84,12 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 1. Wire Stripe payment buttons (needs prices per variant/pack)
 2. Confirm guarantee + shipping copy accuracy
 3. Resend email alerts on new enquiry
+
+## Iteration: Rebrand (2026-10-02) — "TapFive Review" removed for trademark reasons
+- New brand: **Social Media Review Stands**; new domain: **socialreviewstands.com**; new support email: support@socialreviewstands.com
+- New tagline: "More Reviews and Followers. Zero Effort." (hero renders: "Happy customers. / More reviews and followers. / Zero effort." — third line gold gradient)
+- Updated: Navbar, Footer (brand/disclaimer/copyright), LegalLayout, Hero tagline, ThankYouPage (email + back button), PrivacyPage, TermsPage, public/index.html (title, canonical, OG/Twitter meta → socialreviewstands.com), README.md, og-cover.png regenerated via PIL (/tmp/make_og.py, backup at /tmp/og-cover-backup.png)
+- Hero tagline span padding bumped pb-1 → pb-2 to fix gradient descender clipping
+- NOT changed: /app/shopify-theme (legacy, inactive), favicon (generic gold star, no brand text)
+- Verified: testing_agent iteration_1.json — 26/26 frontend checks passed, zero TapFive occurrences on active site
+- PENDING (user-side): push to GitHub (Save to Github) to trigger Netlify rebuild; point Netlify custom domain to socialreviewstands.com; update Stripe Payment Link after-payment redirects to https://socialreviewstands.com/thank-you; revoke the previously exposed GitHub PAT
