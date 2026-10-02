@@ -18,7 +18,7 @@ export default function Navbar() {
           <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#F3E5AB] via-[#D4AF37] to-[#996515] text-[#0A0B0E] flex items-center justify-center shadow-[0_4px_16px_rgba(212,175,55,0.4)]">
             <Nfc size={20} aria-hidden="true" />
           </span>
-          TapFive <span className="gold-text">Review</span>
+          Social Media <span className="gold-text">Review Stands</span>
         </a>
         <div className="hidden md:flex items-center gap-7">
           {LINKS.map((l) => (

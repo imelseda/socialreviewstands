@@ -5,7 +5,7 @@ export default function PrivacyPage() {
     <LegalLayout eyebrow="Legal" title="Privacy Policy" updated="September 12, 2026" testid="privacy-page">
       <h2>1. Who we are</h2>
       <p>
-        TapFive Review ("we", "us", "our") operates tapfivereview.com and sells the NFC 215 Google review stand.
+        Social Media Review Stands ("we", "us", "our") operates socialreviewstands.com and sells the NFC 215 Google review stand.
         This policy explains what information we collect when you use our website or buy from us, and how we use it.
       </p>
 
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
 
       <h2>10. Contact</h2>
       <p>
-        Questions about this policy or your data? Email <a href="mailto:support@tapfivereview.com">support@tapfivereview.com</a>.
+        Questions about this policy or your data? Email <a href="mailto:support@socialreviewstands.com">support@socialreviewstands.com</a>.
       </p>
     </LegalLayout>
   );

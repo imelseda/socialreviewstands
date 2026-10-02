@@ -40,7 +40,7 @@ export default function Hero() {
             NFC + QR · Google Review Stand · Model 215
           </motion.p>
           <h1 data-testid="hero-heading" className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-6 text-[#F8F9FA]">
-            {["Happy customers.", "One tap. Five stars."].map((line, i) => (
+            {["Happy customers.", "More reviews and followers.", "Zero effort."].map((line, i) => (
               <span key={line} className="block overflow-hidden pb-1">
                 <motion.span
                   className={`block ${i === 2 ? "gold-text" : ""}`}

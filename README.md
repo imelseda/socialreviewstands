@@ -1,6 +1,6 @@
-# TapFive Review — Google NFC Review Stand Landing Page
+# Social Media Review Stands — Google NFC Review Stand Landing Page
 
-A premium single-page marketing site for the **NFC 215 Google Review Stand** — a programmable NFC + QR countertop stand that sends customers straight to a business's Google review page in one tap. Live at [tapfivereview.com](https://tapfivereview.com).
+A premium single-page marketing site for the **NFC 215 Google Review Stand** — a programmable NFC + QR countertop stand that sends customers straight to a business's Google review page in one tap. Live at [socialreviewstands.com](https://socialreviewstands.com).
 
 Black-metallic + gold "luxe" theme, sales copy structured as Problem → Solution → Offer.
 

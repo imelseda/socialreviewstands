@@ -10,7 +10,7 @@ export default function LegalLayout({ eyebrow, title, updated, children, testid 
             <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#F3E5AB] via-[#D4AF37] to-[#996515] text-[#0A0B0E] flex items-center justify-center">
               <Nfc size={20} aria-hidden="true" />
             </span>
-            TapFive <span className="gold-text">Review</span>
+            Social Media <span className="gold-text">Review Stands</span>
           </a>
           <a href="/" data-testid="legal-back-link" className="flex items-center gap-2 text-sm font-medium text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200">
             <ArrowLeft size={16} aria-hidden="true" /> Back to site

@@ -25,7 +25,7 @@ const STEPS = [
 const NOTES = [
   { icon: Truck, text: "Your receipt is on its way by email. Stands ship tracked — buyers report 7–9 day delivery." },
   { icon: RefreshCw, text: "Change your link anytime, free — the chip is rewritable in seconds." },
-  { icon: Mail, text: "Questions? Email support@tapfivereview.com and we'll get you set up personally." },
+  { icon: Mail, text: "Questions? Email support@socialreviewstands.com and we'll get you set up personally." },
 ];
 
 export default function ThankYouPage() {
@@ -69,7 +69,7 @@ export default function ThankYouPage() {
       </div>
 
       <div className="flex flex-wrap gap-4">
-        <a href="/" data-testid="thank-you-home-button" className="btn-gold">Back to TapFive Review</a>
+        <a href="/" data-testid="thank-you-home-button" className="btn-gold">Back to Social Media Review Stands</a>
         <a href="/#shop" data-testid="thank-you-shop-button" className="btn-ghost-gold">Add another stand</a>
       </div>
     </LegalLayout>

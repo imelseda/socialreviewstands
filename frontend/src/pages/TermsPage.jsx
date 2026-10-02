@@ -5,8 +5,8 @@ export default function TermsPage() {
     <LegalLayout eyebrow="Legal" title="Terms of Service" updated="September 12, 2026" testid="terms-page">
       <h2>1. The agreement</h2>
       <p>
-        These terms govern your use of tapfivereview.com and any purchase of the NFC 215 Google review stand
-        (the "Product") from TapFive Review ("we", "us", "our"). By using the site or placing an order, you agree
+        These terms govern your use of socialreviewstands.com and any purchase of the NFC 215 Google review stand
+        (the "Product") from Social Media Review Stands ("we", "us", "our"). By using the site or placing an order, you agree
         to these terms.
       </p>
 
@@ -35,7 +35,7 @@ export default function TermsPage() {
       <h2>5. 90-day money-back guarantee</h2>
       <p>
         If you're not satisfied within 90 days of delivery, contact us at
-        <a href="mailto:support@tapfivereview.com"> support@tapfivereview.com</a> to arrange a return for a full
+        <a href="mailto:support@socialreviewstands.com"> support@socialreviewstands.com</a> to arrange a return for a full
         refund of the purchase price. The Product must be returned in reasonable condition. Refunds are issued to
         the original payment method.
       </p>
@@ -50,8 +50,8 @@ export default function TermsPage() {
 
       <h2>7. Intellectual property</h2>
       <p>
-        The website's content, design, and branding belong to TapFive Review. "Google" and the Google logo are
-        trademarks of Google LLC; TapFive Review is not affiliated with, endorsed by, or sponsored by Google LLC.
+        The website's content, design, and branding belong to Social Media Review Stands. "Google" and the Google logo are
+        trademarks of Google LLC; Social Media Review Stands is not affiliated with, endorsed by, or sponsored by Google LLC.
       </p>
 
       <h2>8. Disclaimers &amp; liability</h2>
@@ -69,7 +69,7 @@ export default function TermsPage() {
 
       <h2>10. Contact</h2>
       <p>
-        Questions about these terms? Email <a href="mailto:support@tapfivereview.com">support@tapfivereview.com</a>.
+        Questions about these terms? Email <a href="mailto:support@socialreviewstands.com">support@socialreviewstands.com</a>.
       </p>
     </LegalLayout>
   );
