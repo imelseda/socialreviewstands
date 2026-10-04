@@ -118,3 +118,8 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Required frontend supervisor restart — CRA was serving a cached index.html template (hot reload does not pick up public/index.html changes)
 - Verified: both gtag script src and config call present in served HTML on preview URL; page title intact
 - PENDING: push to GitHub to deploy; GA will start collecting once live (preview traffic also counts — filter internal traffic in GA4 if desired)
+
+## Iteration: GitHub push #2 (2026-10-04)
+- Pushed main @ 1c02984 (SEO pass + GA4 tag) to github.com/imelseda/socialreviewstands using user-supplied temp classic PAT (one-off, not stored; leak scan clean)
+- Verified: remote HEAD = local HEAD
+- Reminder to user stands: revoke the temp token after deploying; Netlify rebuilds on push if repo is linked to socialreviewstands repo
