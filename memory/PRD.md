@@ -112,3 +112,9 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Target keyword set: social media review stands (primary), google review stand, NFC review stand, get more google reviews, auto followers for small business, grow my social media followers, getting more social media followers, get more instagram followers, tiktok/facebook followers for business, tap to review, tap to follow, review stand for restaurants/salons
 - Verified: JSON-LD parses (4/4), robots.txt + sitemap.xml served 200, hero keyword present, 7 FAQ items render, privacy title switches
 - PENDING: push to GitHub (needs token — previous ones told to revoke), then Netlify auto-deploys; submit sitemap in Google Search Console once live on socialreviewstands.com
+
+## Iteration: Google Analytics (2026-10-04)
+- Added GA4 gtag.js (measurement ID G-5K11LQ7JTH) to frontend/public/index.html head, right after charset meta
+- Required frontend supervisor restart — CRA was serving a cached index.html template (hot reload does not pick up public/index.html changes)
+- Verified: both gtag script src and config call present in served HTML on preview URL; page title intact
+- PENDING: push to GitHub to deploy; GA will start collecting once live (preview traffic also counts — filter internal traffic in GA4 if desired)
