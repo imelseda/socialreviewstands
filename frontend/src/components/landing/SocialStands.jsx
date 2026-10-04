@@ -75,7 +75,7 @@ export default function SocialStands() {
         >
           <img
             src="/images/social-trio.jpg"
-            alt="Instagram, Facebook and TikTok NFC stands on a counter at a busy event"
+            alt="Instagram, Facebook and TikTok social media review stands on a counter at a busy event — get more social media followers with one tap"
             data-testid="social-trio-image"
             className="w-full max-h-[75vh] object-cover"
             loading="lazy"

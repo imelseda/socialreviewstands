@@ -100,3 +100,15 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Auth: user-supplied classic PAT (ghp_...) used for one-off push after fine-grained PAT lacked Contents:write — BOTH tokens were pasted in chat and must be revoked by the user
 - Verified: remote HEAD matches local, no token leaked to .git/config or any tracked file
 - PENDING (user-side): relink Netlify site to the new repo (Build & deploy → Link repository), add custom domain socialreviewstands.com, update Stripe Payment Link redirects to https://socialreviewstands.com/thank-you, revoke both chat-exposed GitHub tokens
+
+## Iteration: SEO pass (2026-10-04)
+- Hero subtext now includes main keyword "social media review stands" (user-supplied copy)
+- Copy reframe: stand positioned as "a done-for-you review and follower growth service in physical form" (HowItWorks intro)
+- index.html: new meta description + expanded keywords (follower keywords added); 4 valid JSON-LD blocks (Organization, WebSite, Product w/ $29 offer, FAQPage w/ 7 Q&As); robots meta = index,follow
+- New files: frontend/public/robots.txt (Allow all + sitemap), frontend/public/sitemap.xml (/, /privacy, /terms, /thank-you)
+- Alt texts enriched with keywords: Hero, HowItWorks, Specs, SocialStands, Shop (template alt per product)
+- New FAQ entry #1: "Can it also grow my social media followers?" (targets auto-follower keywords) — FAQS now 7
+- Per-page document.title: LegalLayout sets "Privacy Policy | Social Media Review Stands" etc.; Landing restores home title
+- Target keyword set: social media review stands (primary), google review stand, NFC review stand, get more google reviews, auto followers for small business, grow my social media followers, getting more social media followers, get more instagram followers, tiktok/facebook followers for business, tap to review, tap to follow, review stand for restaurants/salons
+- Verified: JSON-LD parses (4/4), robots.txt + sitemap.xml served 200, hero keyword present, 7 FAQ items render, privacy title switches
+- PENDING: push to GitHub (needs token — previous ones told to revoke), then Netlify auto-deploys; submit sitemap in Google Search Console once live on socialreviewstands.com

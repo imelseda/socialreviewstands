@@ -32,7 +32,7 @@ export default function HowItWorks() {
             Tap. Review. Done. <span className="gold-text">It's really that simple.</span>
           </h2>
           <p className="text-base text-[#94A3B8] mb-12 max-w-lg leading-relaxed">
-            No tech skills. No learning curve. No staff training. The stand removes every step between a happy customer and a posted 5-star review.
+            This isn't just a stand — it's a done-for-you review and follower growth service in physical form. Your social media review stand works by putting your Google review page or social media profile one tap away at the exact moment customers are happiest. No tech skills. No staff training. No monthly fees.
           </p>
           <div className="flex flex-col gap-4">
             {STEPS.map((s, i) => (
@@ -69,7 +69,7 @@ export default function HowItWorks() {
           <div className="rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
             <img
               src="/images/solution-bar-scene.png"
-              alt="Customer holding a phone with the Google review page open next to the NFC review stand on a bar counter"
+              alt="Customer holding a phone with the Google review page open next to a social media review stand on a bar counter — get more Google reviews with one tap"
               data-testid="solution-image"
               className="w-full max-h-[75vh] object-cover"
             />

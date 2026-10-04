@@ -29,7 +29,7 @@ function ProductCard({ product, index }) {
         </span>
       )}
       <div className="h-60 overflow-hidden shrink-0">
-        <img src={product.image} alt={product.name} data-testid={`product-image-${product.id}`} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" />
+        <img src={product.image} alt={`${product.name} — NFC and QR social media review stand for small businesses`} data-testid={`product-image-${product.id}`} className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" />
       </div>
       <div className="flex flex-col gap-4 p-7 flex-1">
         <h3 className="font-display text-xl font-bold tracking-tight text-[#F8F9FA]">{product.name}</h3>

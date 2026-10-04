@@ -25,6 +25,7 @@ import SocialStands from "@/components/landing/SocialStands";
 
 function Landing() {
   useEffect(() => {
+    document.title = "Social Media Review Stands — Google Review NFC Stand | More Reviews and Followers. Zero Effort.";
     const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
     let raf;
     const loop = (t) => {

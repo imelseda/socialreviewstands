@@ -19,7 +19,7 @@ const HeroImage = ({ testid, className }) => (
   <div className="rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
     <img
       src="/images/hero-cafe.jpg"
-      alt="Customer tapping a phone on the NFC 215 Google review stand at a café counter — stop asking for reviews, start tapping for 5 stars"
+      alt="Customer tapping a phone on a social media review stand at a café counter — the NFC 215 Google review stand that collects 5-star reviews and social media followers with one tap"
       data-testid={testid}
       className={`w-full object-cover ${className}`}
     />
@@ -54,7 +54,7 @@ export default function Hero() {
             ))}
           </h1>
           <motion.p {...fadeUp(0.2)} data-testid="hero-subtext" className="text-base md:text-lg text-[#94A3B8] max-w-xl mb-10 leading-relaxed">
-            Asking for Google reviews is awkward — and customers who promise to leave one forget the second they walk out. The NFC 215 stand puts your review page one tap away, right on your counter. No apps. No searching. No monthly fees.
+            Asking for Google reviews is awkward — and customers who promise to leave one forget the second they walk out. Our social media review stands put your Google review page or your social media channel one tap away, right on your counter. No apps. No searching. No monthly fees.
           </motion.p>
           <motion.div {...fadeUp(0.25)} className="lg:hidden mb-10">
             <HeroImage testid="hero-product-image-mobile" className="max-h-[60vh]" />

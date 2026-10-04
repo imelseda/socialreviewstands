@@ -136,6 +136,10 @@ export const PRODUCTS = [
 
 export const FAQS = [
   {
+    q: "Can it also grow my social media followers?",
+    a: "Yes — that's what makes it a social media review stand, not just a review sign. Point the same chip at your Instagram, TikTok or Facebook page and every tap becomes a new follow. It's the closest thing to auto followers for small business: real customers who just visited, following you while they're still in the store — the easiest way of getting more social media followers without posting more content.",
+  },
+  {
     q: "How does the stand actually work?",
     a: "Your customer taps the stand with their phone — exactly like tap-to-pay — or scans the printed QR code. Their phone opens your Google review page instantly. They tap the stars, write a line, hit post. The whole thing takes about 8 seconds.",
   },

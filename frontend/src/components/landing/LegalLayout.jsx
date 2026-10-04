@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { Nfc, ArrowLeft } from "lucide-react";
 import Footer from "./Footer";
 
 export default function LegalLayout({ eyebrow, title, updated, children, testid }) {
+  useEffect(() => {
+    document.title = `${title} | Social Media Review Stands`;
+  }, [title]);
+
   return (
     <div className="min-h-screen bg-[#0A0B0E] text-[#F8F9FA]">
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#0B0C10]/80 border-b border-[#C5A059]/20">

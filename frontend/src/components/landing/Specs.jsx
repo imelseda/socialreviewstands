@@ -38,7 +38,7 @@ export default function Specs() {
         > 
           <img
             src="/images/google-review-stand-black-white.jpg"
-            alt="Black NFC 215 stand with dimension annotations"
+            alt="Black NFC 215 Google review stand with dimension annotations — a countertop social media review stand for small businesses"
             data-testid="specs-product-image"
             className="w-full max-h-[70vh] object-cover"
           />
