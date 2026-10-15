@@ -123,3 +123,10 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Pushed main @ 1c02984 (SEO pass + GA4 tag) to github.com/imelseda/socialreviewstands using user-supplied temp classic PAT (one-off, not stored; leak scan clean)
 - Verified: remote HEAD = local HEAD
 - Reminder to user stands: revoke the temp token after deploying; Netlify rebuilds on push if repo is linked to socialreviewstands repo
+
+## Iteration: Hosting move to HostGator (2026-10-15, user-reported)
+- User moved live hosting from Netlify to HostGator (Apache static hosting); socialreviewstands.com points there. DONE by user.
+- User confirmed: Stripe thank-you redirects updated, sitemap submitted in Google Search Console, all chat-exposed GitHub tokens revoked. ALL DONE.
+- Added frontend/public/.htaccess (Apache SPA rewrite → index.html) — REQUIRED or /privacy, /terms, /thank-you 404 on direct load (Stripe redirects buyers to /thank-you!). Verified it lands in build/ after yarn build.
+- WARNING: OrderForm ("Reserve My Stand") posts to REACT_APP_BACKEND_URL = Emergent preview backend, which can sleep/change — on HostGator there is no FastAPI backend. Needs a permanent fix (Formspree or HostGator PHP mail script) if the form should keep working long-term.
+- Deployment workflow going forward: yarn build → upload frontend/build contents (including hidden .htaccess) to HostGator public_html
