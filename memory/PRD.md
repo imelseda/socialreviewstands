@@ -163,3 +163,10 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
   - postmaster@socialreviewstands.com does not exist → likely NO mailboxes created yet on HostGator
   - BLOCKER for form delivery until user creates support@socialreviewstands.com in cPanel → Email Accounts (HostGator then auto-adds MX)
   - Real test email could not be sent from container (sender-verify + RBL rejections) — final delivery test must be done from live site after mailbox creation
+
+## Iteration: Auto-reply email (2026-10-18)
+- send-enquiry.php now sends an instant branded HTML confirmation to the customer after the admin notification succeeds (subject "We got your message — Social Media Review Stands", includes their chosen product, 24h reply promise, Reply-To support@). Admin mail success alone determines ok:true; auto-reply failure never blocks the form.
+- Build updated: build/send-enquiry.php contains auto-reply. NOTE: user uploaded files BEFORE this change — must re-upload send-enquiry.php (single file is enough).
+- DNS re-check: socialreviewstands.com STILL has no MX record even after user created the mailbox — if DNS is managed at the registrar (not HostGator nameservers), user must add MX record manually (e.g. MX 0 → mail.socialreviewstands.com, A mail → 50.6.109.8). Without MX, EXTERNAL mail to support@ is unreliable; local PHP mail() delivery on the server works regardless.
+- External mailbox probe inconclusive (sender-verify callouts RBL-blocked for test sender domains) — final proof = submit live form and watch inbox.
+- Recommend: enable cPanel "Email Deliverability" (DKIM/SPF) so auto-replies avoid spam folders.
