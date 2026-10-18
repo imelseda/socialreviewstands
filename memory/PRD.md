@@ -138,3 +138,8 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Verified rendered: thank-you=noindex,nofollow; home/privacy=index,follow
 - Final export built at frontend/build: includes .htaccess, robots.txt, sitemap.xml (no thank-you), GA tag G-5K11LQ7JTH — ALL CHECKS PASSED
 - User uploads frontend/build contents (incl. hidden .htaccess) to HostGator public_html
+
+## Iteration: GitHub push #3 (2026-10-18)
+- Pushed main @ 4a695b0 (thank-you noindex + sitemap fix + HostGator .htaccess) to imelseda/socialreviewstands
+- Token issue resolved: temp classic PAT initially had wrong scopes (admin:org, admin:public_key) — user added repo scope, push succeeded
+- Verified: remote HEAD = local, no token stored locally; user to revoke temp token after use
