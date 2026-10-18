@@ -68,8 +68,8 @@ export default function HowItWorks() {
         >
           <div className="rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
             <img
-              src="/images/solution-bar-scene.png"
-              alt="Customer holding a phone with the Google review page open next to a social media review stand on a bar counter — get more Google reviews with one tap"
+              src="/images/tap-review-done.png"
+              alt="How a social media review stand works — customer taps the NFC stand with a phone, the Google review page opens, review posted in seconds"
               data-testid="solution-image"
               className="w-full max-h-[75vh] object-cover"
             />

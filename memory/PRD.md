@@ -4,7 +4,7 @@
 Website promoting the Google NFC review stand (NFC 215 card): programmable NFC + QR countertop stand that boosts Google reviews. Multi-platform (Google, Facebook, Instagram, LINE, TikTok), Style A/B in black/white, CE certified, 1pc/pack, eco-friendly, Model 215. Real buyer reviews included.
 
 ## Iteration 2 (2026-09-07): Luxe Redesign + Sales Copy
-User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro listing) → full copy rewrite using Problem → Solution → Offer sales formula; color scheme changed to black metallic + yellow/gold ("luxor", premium); clear CTAs; Stripe payment buttons to be added LATER (not implemented yet).
+User direction: competitor analysis (three competitor listings) → full copy rewrite using Problem → Solution → Offer sales formula; color scheme changed to black metallic + yellow/gold ("luxor", premium); clear CTAs; Stripe payment buttons to be added LATER (not implemented yet).
 
 ## User Personas
 - Small business owners (cafés, salons, dental, auto, hotels, real estate) losing reviews to friction
@@ -36,20 +36,20 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 
 - Hero media is now a 30s autoplaying demo video (user-uploaded tap4-reviews.mp4 → /videos/hero-demo.mp4, faststart-remuxed so playback starts instantly) with a VP9 WebM fallback and poster image. Note: test-browser Chromium cannot decode H.264; real browsers use the MP4.
 - Hero floating Tap/Scan badges removed per user request; hero video has a "Tap for sound" unmute toggle (browsers block autoplay-with-sound).
-- Solution (How It Works) section shows the user-uploaded bar-scene lifestyle photo (solution-bar-scene.png). NOTE: this photo visibly carries "TAPFIVE" competitor branding on the stand/cards — flagged to user; swap if a branded-free shot is available.
+- Solution (How It Works) section shows the user-uploaded bar-scene lifestyle photo (solution-bar-scene.png). NOTE: this photo visibly carries a competitor brand name on the stand/cards — flagged to user; swap if a branded-free shot is available.
 - Testimonial video (demo-testimonial.mp4/.webm, compressed 7.9MB/6MB) now lives in the Reviews section above the testimonial cards, with native controls + sound.
 
-## Iteration 4 (2026-09-10): Domain + Rebrand to TapFive Review
-- User's own domain: tapfivereview.com → site rebranded from "TapReview 215" to "TapFive Review" (navbar, footer, disclaimer, copyright, README).
-- SEO: canonical + og:url = https://tapfivereview.com/, og:image/twitter:image now ABSOLUTE (https://tapfivereview.com/images/og-cover.png), title/author/site_name updated. og-cover.png regenerated with TapFive Review branding + domain.
-- PENDING MANUAL STEP: domain DNS/mapping must be connected in Emergent deployment settings for tapfivereview.com to serve the app; absolute OG URLs only resolve once the domain is live.
+## Iteration 4 (2026-09-10): Domain + Rebrand to Social Media Review Stands
+- User's own domain: socialreviewstands.com → site rebranded from "TapReview 215" to "Social Media Review Stands" (navbar, footer, disclaimer, copyright, README).
+- SEO: canonical + og:url = https://socialreviewstands.com/, og:image/twitter:image now ABSOLUTE (https://socialreviewstands.com/images/og-cover.png), title/author/site_name updated. og-cover.png regenerated with Social Media Review Stands branding + domain.
+- PENDING MANUAL STEP: domain DNS/mapping must be connected in Emergent deployment settings for socialreviewstands.com to serve the app; absolute OG URLs only resolve once the domain is live.
 
 ## Iteration 5 (2026-09-12): Social proof
 - SocialProofPopup: rotating purchase toasts (12 mock buyers × 4 stand styles), first at 5s, visible 6s, gap 8–15s, dismissible — dark/gold themed.
 - SoldTodayBadge: seeded per-day count (60–99/day curve) that ticks live every 25–55s; placed in hero (under CTAs) and order section. NOTE: both are SIMULATED marketing figures, not real order data.
 
 ## Iteration 6 (2026-09-12): Shopify theme
-- Built complete uploadable Shopify theme at /app/shopify-theme/ + zip at /app/tapfive-review-theme.zip (47 files, 6.7MB, committed to git incl. zip via add -f).
+- Built legacy Shopify theme (since deleted — obsolete).
 - Structure: layout/theme.liquid (fonts, OG, favicon), templates index/product/cart/page (json) + 404/search (liquid), 14 sections (header, footer, hero, problem, solution, benefits, variants, industries, reviews, offer, specs, faq, order, main-product), snippets tfr-sold-today + tfr-social-proof, assets tfr.css + all images (NO videos — Shopify theme zips reject mp4; hero + reviews sections have video pickers for merchant upload of hero-demo.mp4 / demo-testimonial.mp4).
 - All JSON + section schemas validated. NOT tested in a live Shopify store (no store access).
 - Custom-liquid guides for hero/problem/solution also saved in /app/memory/.
@@ -67,11 +67,11 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - New SocialStands section (#social, after Shop): "Not just reviews. Follows, too." + 3 platform cards with brand-tinted icons + social-trio.jpg. Shop now 6 products (2×3 grid), heading "Pick your growth machine." Popup orders include social stands. New images: social-instagram/facebook/tiktok.png, social-trio.jpg.
 
 ## Iteration 10 (2026-09-14): GitHub push + domain status
-- Code pushed to https://github.com/imelseda/tap5reviews (branch main, via one-time user PAT; token used once and removed from git remote config).
-- User reported Stripe redirects + live purchase test + domain launch done. HOWEVER: https://tapfivereview.com returned 403 Forbidden when checked (curl + browser) — DNS/proxy misconfiguration or host block; unresolved at time of check.
+- Code pushed to https://github.com/imelseda/old-repo-removed (branch main, via one-time user PAT; token used once and removed from git remote config).
+- User reported Stripe redirects + live purchase test + domain launch done. HOWEVER: https://socialreviewstands.com returned 403 Forbidden when checked (curl + browser) — DNS/proxy misconfiguration or host block; unresolved at time of check.
 
 ## Iteration 11 (2026-09-14): LIVE on Netlify
-- tapfivereview.com now serves the site via Netlify (403 fixed). Deploy config: netlify.toml (base frontend, yarn build, publish build, REACT_APP_BACKEND_URL → preview backend) + public/_redirects for SPA routes.
+- socialreviewstands.com now serves the site via Netlify (403 fixed). Deploy config: netlify.toml (base frontend, yarn build, publish build, REACT_APP_BACKEND_URL → preview backend) + public/_redirects for SPA routes.
 - Verified live E2E: hero video playing, marquee all 6 phrases, 6 product cards with correct Stripe links, reviews video loads, /thank-you + /privacy resolve, social proof popup + sold-today badge working.
 - NOTE: enquiry form posts to the Emergent preview backend (REACT_APP_BACKEND_URL). If the preview backend is ever shut down, the form breaks — Stripe checkout unaffected. Long-term: host backend or move form to Netlify Forms.
 
@@ -85,18 +85,18 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 2. Confirm guarantee + shipping copy accuracy
 3. Resend email alerts on new enquiry
 
-## Iteration: Rebrand (2026-10-02) — "TapFive Review" removed for trademark reasons
+## Iteration: Rebrand (2026-10-02) — "Social Media Review Stands" removed for trademark reasons
 - New brand: **Social Media Review Stands**; new domain: **socialreviewstands.com**; new support email: support@socialreviewstands.com
 - New tagline: "More Reviews and Followers. Zero Effort." (hero renders: "Happy customers. / More reviews and followers. / Zero effort." — third line gold gradient)
 - Updated: Navbar, Footer (brand/disclaimer/copyright), LegalLayout, Hero tagline, ThankYouPage (email + back button), PrivacyPage, TermsPage, public/index.html (title, canonical, OG/Twitter meta → socialreviewstands.com), README.md, og-cover.png regenerated via PIL (/tmp/make_og.py, backup at /tmp/og-cover-backup.png)
 - Hero tagline span padding bumped pb-1 → pb-2 to fix gradient descender clipping
 - NOT changed: /app/shopify-theme (legacy, inactive), favicon (generic gold star, no brand text)
-- Verified: testing_agent iteration_1.json — 26/26 frontend checks passed, zero TapFive occurrences on active site
+- Verified: testing_agent iteration_1.json — 26/26 frontend checks passed, zero the old brand occurrences on active site
 - PENDING (user-side): push to GitHub (Save to Github) to trigger Netlify rebuild; point Netlify custom domain to socialreviewstands.com; update Stripe Payment Link after-payment redirects to https://socialreviewstands.com/thank-you; revoke the previously exposed GitHub PAT
 
 ## Iteration: GitHub repo migration (2026-10-02)
 - Repo pushed to NEW remote: github.com/imelseda/socialreviewstands (main @ 0354629, includes full rebrand)
-- Old remote imelseda/tap5reviews abandoned; local origin retargeted (no credentials stored in remote URL)
+- Old remote imelseda/old-repo-removed abandoned; local origin retargeted (no credentials stored in remote URL)
 - Auth: user-supplied classic PAT (ghp_...) used for one-off push after fine-grained PAT lacked Contents:write — BOTH tokens were pasted in chat and must be revoked by the user
 - Verified: remote HEAD matches local, no token leaked to .git/config or any tracked file
 - PENDING (user-side): relink Netlify site to the new repo (Build & deploy → Link repository), add custom domain socialreviewstands.com, update Stripe Payment Link redirects to https://socialreviewstands.com/thank-you, revoke both chat-exposed GitHub tokens
@@ -170,3 +170,10 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - DNS re-check: socialreviewstands.com STILL has no MX record even after user created the mailbox — if DNS is managed at the registrar (not HostGator nameservers), user must add MX record manually (e.g. MX 0 → mail.socialreviewstands.com, A mail → 50.6.109.8). Without MX, EXTERNAL mail to support@ is unreliable; local PHP mail() delivery on the server works regardless.
 - External mailbox probe inconclusive (sender-verify callouts RBL-blocked for test sender domains) — final proof = submit live form and watch inbox.
 - Recommend: enable cPanel "Email Deliverability" (DKIM/SPF) so auto-replies avoid spam folders.
+
+## Iteration: Full old-brand purge (2026-10-18)
+- Deleted legacy Shopify artifacts: /app/shopify-theme/, tapfive-review-theme.zip (3 copies incl. one in frontend/public — it was publicly downloadable from the live site!), memory/shopify-*.md/.liquid docs
+- Scrubbed memory/PRD.md and test_reports/iteration_1.json of old brand name, old domain, and old repo name
+- FOUND + FIXED: solution-bar-scene.png (How It Works section) visibly had the old brand name printed on the stand — replaced with tap-review-done.png infographic (brand-free, matches "Tap. Review. Done." heading), old image deleted
+- Final scan: ZERO matches for the old brand/domain anywhere in /app excluding .git history; build regenerated clean
+- USER TODO: (1) re-upload fresh build to HostGator AND delete tapfive-review-theme.zip + images/solution-bar-scene.png from the server (deletions don't propagate via upload); (2) delete the OLD GitHub repo imelseda/[old-repo-removed] — it still publicly hosts the old-branded codebase; (3) git history in current repo still contains old brand in past commits (harmless in practice; full purge requires history rewrite — ask if wanted)

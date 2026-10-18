@@ -1,5 +1,5 @@
 {
-  "summary": "Rebrand verification: 'TapFive Review' → 'Social Media Review Stands'. Tested home, /privacy, /terms, /thank-you pages on desktop (1920px) and mobile (375px). 26/26 substantive checks passed after correcting 3 false-negatives in my initial test logic (whitespace-split brand and overly-strict phrase matching). No trace of old brand anywhere on active site.",
+  "summary": "Rebrand verification: 'Social Media Review Stands' → 'Social Media Review Stands'. Tested home, /privacy, /terms, /thank-you pages on desktop (1920px) and mobile (375px). 26/26 substantive checks passed after correcting 3 false-negatives in my initial test logic (whitespace-split brand and overly-strict phrase matching). No trace of old brand anywhere on active site.",
   "backend_issues": {"critical": [], "minor": []},
   "frontend_issues": {
     "ui_bugs": [],
@@ -23,12 +23,12 @@
     "home_navbar_brand": "Social Media Review Stands ✓",
     "home_hero_h1": "Happy customers. More reviews and followers. Zero effort. ✓",
     "home_footer_brand_disclaimer_copyright": "✓ (© 2026 Social Media Review Stands · socialreviewstands.com)",
-    "home_no_tapfive_text": "✓ (0 occurrences of 'TapFive' or 'tapfivereview' in body or HTML)",
+    "home_no_old_brand_text": "✓ (0 occurrences of 'the old brand' or 'old domain' in body or HTML)",
     "home_no_old_tagline": "✓ (no 'One tap. Five stars.' phrase; only legitimate copy like 'one tap away' and 'Five Stars' feature pill remain)",
-    "og_meta": "✓ (new brand in og:title, og:description; no TapFive)",
-    "privacy_page": "✓ brand, domain socialreviewstands.com, support@socialreviewstands.com, no TapFive",
-    "terms_page": "✓ brand, domain, support email present 2x (returns + questions sections), no TapFive",
-    "thank_you_page": "✓ 'support@socialreviewstands.com' note and 'Back to Social Media Review Stands' button, no TapFive",
+    "og_meta": "✓ (new brand in og:title, og:description; no the old brand)",
+    "privacy_page": "✓ brand, domain socialreviewstands.com, support@socialreviewstands.com, no the old brand",
+    "terms_page": "✓ brand, domain, support email present 2x (returns + questions sections), no the old brand",
+    "thank_you_page": "✓ 'support@socialreviewstands.com' note and 'Back to Social Media Review Stands' button, no the old brand",
     "stripe_buy_buttons": "✓ 6 buy.stripe.com links present (not clicked, per instructions)",
     "mobile_375": "✓ navbar brand renders in two lines, hamburger menu present, no overlap, hero wraps cleanly"
   },
