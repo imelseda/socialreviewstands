@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import { toast } from "sonner";
 import { Truck, ShieldCheck, Ban } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -7,8 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { VARIANTS } from "./data";
 import SoldTodayBadge from "./SoldTodayBadge";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const PERKS = [
   { icon: Truck, text: "Fast tracked shipping — buyers report 7–9 day delivery" },
@@ -27,7 +24,11 @@ export default function OrderForm() {
     e.preventDefault();
     setSending(true);
     try {
-      await axios.post(`${API}/enquiries`, { ...form, quantity: Number(form.quantity) || 1 });
+      const body = new FormData(e.target);
+      body.set("quantity", String(Number(form.quantity) || 1));
+      const res = await fetch("/send-enquiry.php", { method: "POST", body });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.ok !== true) throw new Error(data.error || "send failed");
       toast.success("Request received! We'll reply within 24 hours with pricing and delivery details.");
       setForm(EMPTY);
     } catch (err) {
@@ -68,22 +69,23 @@ export default function OrderForm() {
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="flex flex-col gap-2">
               <Label htmlFor="order-name" className="text-[#F8F9FA]/80">Your name *</Label>
-              <Input id="order-name" data-testid="order-name-input" required value={form.name} onChange={update("name")} placeholder="Alex Meyer" className="bg-[#0B0C10] border-[#D4AF37]/20 text-[#F8F9FA] placeholder:text-[#94A3B8]/50 focus:ring-2 focus:ring-[#D4AF37]" />
+              <Input id="order-name" name="name" data-testid="order-name-input" required value={form.name} onChange={update("name")} placeholder="Alex Meyer" className="bg-[#0B0C10] border-[#D4AF37]/20 text-[#F8F9FA] placeholder:text-[#94A3B8]/50 focus:ring-2 focus:ring-[#D4AF37]" />
             </div>
             <div className="flex flex-col gap-2">
               <Label htmlFor="order-email" className="text-[#F8F9FA]/80">Email *</Label>
-              <Input id="order-email" data-testid="order-email-input" type="email" required value={form.email} onChange={update("email")} placeholder="alex@yourbusiness.com" className="bg-[#0B0C10] border-[#D4AF37]/20 text-[#F8F9FA] placeholder:text-[#94A3B8]/50 focus:ring-2 focus:ring-[#D4AF37]" />
+              <Input id="order-email" name="email" data-testid="order-email-input" type="email" required value={form.email} onChange={update("email")} placeholder="alex@yourbusiness.com" className="bg-[#0B0C10] border-[#D4AF37]/20 text-[#F8F9FA] placeholder:text-[#94A3B8]/50 focus:ring-2 focus:ring-[#D4AF37]" />
             </div>
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="order-business" className="text-[#F8F9FA]/80">Business name</Label>
-            <Input id="order-business" data-testid="order-business-input" value={form.business_name} onChange={update("business_name")} placeholder="Your café, salon or store" className="bg-[#0B0C10] border-[#D4AF37]/20 text-[#F8F9FA] placeholder:text-[#94A3B8]/50 focus:ring-2 focus:ring-[#D4AF37]" />
+            <Input id="order-business" name="business_name" data-testid="order-business-input" value={form.business_name} onChange={update("business_name")} placeholder="Your café, salon or store" className="bg-[#0B0C10] border-[#D4AF37]/20 text-[#F8F9FA] placeholder:text-[#94A3B8]/50 focus:ring-2 focus:ring-[#D4AF37]" />
           </div>
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="flex flex-col gap-2">
               <Label htmlFor="order-variant" className="text-[#F8F9FA]/80">Style *</Label>
               <select
                 id="order-variant"
+                name="variant"
                 data-testid="order-variant-select"
                 value={form.variant}
                 onChange={update("variant")}
@@ -96,13 +98,15 @@ export default function OrderForm() {
             </div>
             <div className="flex flex-col gap-2">
               <Label htmlFor="order-quantity" className="text-[#F8F9FA]/80">Quantity *</Label>
-              <Input id="order-quantity" data-testid="order-quantity-input" type="number" min="1" max="500" required value={form.quantity} onChange={update("quantity")} className="bg-[#0B0C10] border-[#D4AF37]/20 text-[#F8F9FA] focus:ring-2 focus:ring-[#D4AF37]" />
+              <Input id="order-quantity" name="quantity" data-testid="order-quantity-input" type="number" min="1" max="500" required value={form.quantity} onChange={update("quantity")} className="bg-[#0B0C10] border-[#D4AF37]/20 text-[#F8F9FA] focus:ring-2 focus:ring-[#D4AF37]" />
             </div>
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="order-message" className="text-[#F8F9FA]/80">Message</Label>
-            <Textarea id="order-message" data-testid="order-message-input" rows={4} value={form.message} onChange={update("message")} placeholder="Platform you want to link, delivery country, questions…" className="bg-[#0B0C10] border-[#D4AF37]/20 text-[#F8F9FA] placeholder:text-[#94A3B8]/50 focus:ring-2 focus:ring-[#D4AF37]" />
+            <Textarea id="order-message" name="message" data-testid="order-message-input" rows={4} value={form.message} onChange={update("message")} placeholder="Platform you want to link, delivery country, questions…" className="bg-[#0B0C10] border-[#D4AF37]/20 text-[#F8F9FA] placeholder:text-[#94A3B8]/50 focus:ring-2 focus:ring-[#D4AF37]" />
           </div>
+          {/* Honeypot — hidden from humans, catches spam bots */}
+          <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" data-testid="order-honeypot-input" />
           <button
             type="submit"
             data-testid="order-submit-button"

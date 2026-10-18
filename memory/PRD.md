@@ -143,3 +143,13 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Pushed main @ 4a695b0 (thank-you noindex + sitemap fix + HostGator .htaccess) to imelseda/socialreviewstands
 - Token issue resolved: temp classic PAT initially had wrong scopes (admin:org, admin:public_key) — user added repo scope, push succeeded
 - Verified: remote HEAD = local, no token stored locally; user to revoke temp token after use
+
+## Iteration: Enquiry form → HostGator-native email (2026-10-18)
+- New: frontend/public/send-enquiry.php — PHP mail() handler delivering form submissions to support@socialreviewstands.com (From: noreply@socialreviewstands.com, Reply-To: customer)
+- Security: honeypot field (name="company", fake-success on bot fill), header-injection stripping, email validation, POST-only, JSON responses
+- OrderForm.jsx rewired: posts FormData to /send-enquiry.php via fetch (axios/API dependency removed from component); all inputs now carry name attributes
+- Tested with php-cli: 422 validation, honeypot fake-ok, 405 on GET, mail-path executes (500 here only because container has no sendmail — works natively on HostGator)
+- Build verified: build/send-enquiry.php + build/.htaccess present
+- NOTE: form shows error toast in Emergent preview (dev server can't run PHP) — expected; real delivery happens on HostGator only
+- USER TODO: ensure support@socialreviewstands.com mailbox exists in HostGator; after uploading build, submit one real test enquiry to confirm delivery (check spam folder first time)
+- Emergent FastAPI/MongoDB backend is now unused by the live site (kept for preview only)
