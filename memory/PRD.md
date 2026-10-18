@@ -153,3 +153,13 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - NOTE: form shows error toast in Emergent preview (dev server can't run PHP) — expected; real delivery happens on HostGator only
 - USER TODO: ensure support@socialreviewstands.com mailbox exists in HostGator; after uploading build, submit one real test enquiry to confirm delivery (check spam folder first time)
 - Emergent FastAPI/MongoDB backend is now unused by the live site (kept for preview only)
+
+## Iteration: Contact form rework + mail infra findings (2026-10-18)
+- OrderForm: "Style" dropdown replaced with "Product" dropdown listing all 6 PRODUCTS (was VARIANTS color list); button "Reserve My Stand" → "Contact Us"; new form heading "Looking for help? We're here."; success toast updated; field renamed variant→product end-to-end (PHP reads $_POST['product'], email body labels "Product:")
+- send-enquiry.php From: changed to support@socialreviewstands.com (HostGator Exim does sender verification on local domains — nonexistent noreply@ mailbox would be rejected)
+- Verified in preview: heading, 6 product options, Contact Us button render; form submits with graceful toast (preview can't execute PHP — expected)
+- MAIL INFRA FINDINGS (tested from container against 50.6.109.8:25, Exim/HostGator):
+  - socialreviewstands.com has NO MX record (checked 8.8.8.8 + 1.1.1.1)
+  - postmaster@socialreviewstands.com does not exist → likely NO mailboxes created yet on HostGator
+  - BLOCKER for form delivery until user creates support@socialreviewstands.com in cPanel → Email Accounts (HostGator then auto-adds MX)
+  - Real test email could not be sent from container (sender-verify + RBL rejections) — final delivery test must be done from live site after mailbox creation

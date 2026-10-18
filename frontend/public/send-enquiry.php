@@ -24,7 +24,7 @@ function clean_header($v) {
 $name     = clean_header($_POST['name'] ?? '');
 $email    = clean_header($_POST['email'] ?? '');
 $business = clean_header($_POST['business_name'] ?? '');
-$variant  = clean_header($_POST['variant'] ?? '');
+$product  = clean_header($_POST['product'] ?? '');
 $quantity = (int)($_POST['quantity'] ?? 1);
 $message  = trim((string)($_POST['message'] ?? ''));
 
@@ -36,15 +36,15 @@ if ($name === '' || $email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL))
 if ($quantity < 1) $quantity = 1;
 
 $to      = 'support@socialreviewstands.com';
-$subject = 'New stand enquiry — ' . $name;
+$subject = 'New enquiry — ' . $name;
 $body    = "New enquiry from socialreviewstands.com\n\n"
          . "Name: {$name}\n"
          . "Email: {$email}\n"
          . "Business: {$business}\n"
-         . "Style: {$variant}\n"
+         . "Product: {$product}\n"
          . "Quantity: {$quantity}\n\n"
          . "Message:\n{$message}\n";
-$headers = "From: Social Media Review Stands <noreply@socialreviewstands.com>\r\n"
+$headers = "From: Social Media Review Stands <support@socialreviewstands.com>\r\n"
          . "Reply-To: {$name} <{$email}>\r\n";
 
 $sent = @mail($to, $subject, $body, $headers);

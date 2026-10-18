@@ -4,7 +4,7 @@ import { Truck, ShieldCheck, Ban } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { VARIANTS } from "./data";
+import { PRODUCTS } from "./data";
 import SoldTodayBadge from "./SoldTodayBadge";
 
 const PERKS = [
@@ -13,7 +13,7 @@ const PERKS = [
   { icon: Ban, text: "One-time purchase — no subscription, no monthly fees" },
 ];
 
-const EMPTY = { name: "", email: "", business_name: "", variant: VARIANTS[0].name, quantity: 1, message: "" };
+const EMPTY = { name: "", email: "", business_name: "", product: PRODUCTS[0].name, quantity: 1, message: "" };
 
 export default function OrderForm() {
   const [form, setForm] = useState(EMPTY);
@@ -29,7 +29,7 @@ export default function OrderForm() {
       const res = await fetch("/send-enquiry.php", { method: "POST", body });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || data.ok !== true) throw new Error(data.error || "send failed");
-      toast.success("Request received! We'll reply within 24 hours with pricing and delivery details.");
+      toast.success("Message sent! We'll get back to you within 24 hours.");
       setForm(EMPTY);
     } catch (err) {
       toast.error("Something went wrong sending your request. Please try again.");
@@ -48,7 +48,7 @@ export default function OrderForm() {
             Stop losing reviews. <span className="gold-text">Start collecting them.</span>
           </h2>
           <p className="text-base text-[#94A3B8] max-w-lg mb-6 leading-relaxed">
-            Your competitors are collecting 5-star reviews right now. Tell us your style and how many counters you're covering — we'll reply within 24 hours with pricing and delivery details.
+            Your competitors are collecting 5-star reviews right now. Tell us which product you're interested in and how many counters you're covering — we'll reply within 24 hours with pricing and delivery details.
           </p>
           <p className="text-sm text-[#D4AF37] font-semibold mb-8">
             Ready to buy now? <a href="#shop" data-testid="order-shop-link" className="underline decoration-[#D4AF37]/40 hover:decoration-[#D4AF37]">See instant checkout pricing above</a> — or send the form for bulk orders and questions.
@@ -66,6 +66,12 @@ export default function OrderForm() {
           </ul>
         </div>
         <form onSubmit={submit} data-testid="order-form" className="rounded-3xl border border-[#D4AF37]/25 bg-[#12141C]/80 shadow-[0_24px_80px_rgba(0,0,0,0.6)] p-8 lg:p-10 flex flex-col gap-5">
+          <div>
+            <h3 data-testid="order-form-heading" className="font-display text-2xl font-bold tracking-tight text-[#F8F9FA] mb-1.5">
+              Looking for help? <span className="gold-text">We're here.</span>
+            </h3>
+            <p className="text-sm text-[#94A3B8]">Questions, bulk orders or custom links — send us a message.</p>
+          </div>
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="flex flex-col gap-2">
               <Label htmlFor="order-name" className="text-[#F8F9FA]/80">Your name *</Label>
@@ -82,17 +88,17 @@ export default function OrderForm() {
           </div>
           <div className="grid sm:grid-cols-2 gap-5">
             <div className="flex flex-col gap-2">
-              <Label htmlFor="order-variant" className="text-[#F8F9FA]/80">Style *</Label>
+              <Label htmlFor="order-product" className="text-[#F8F9FA]/80">Product *</Label>
               <select
-                id="order-variant"
-                name="variant"
-                data-testid="order-variant-select"
-                value={form.variant}
-                onChange={update("variant")}
+                id="order-product"
+                name="product"
+                data-testid="order-product-select"
+                value={form.product}
+                onChange={update("product")}
                 className="h-9 w-full rounded-md border border-[#D4AF37]/20 bg-[#0B0C10] px-3 text-sm text-[#F8F9FA] shadow-xs outline-none focus:ring-2 focus:ring-[#D4AF37]"
               >
-                {VARIANTS.map((v) => (
-                  <option key={v.id} value={v.name}>{v.name}</option>
+                {PRODUCTS.map((p) => (
+                  <option key={p.id} value={p.name}>{p.name}</option>
                 ))}
               </select>
             </div>
@@ -113,7 +119,7 @@ export default function OrderForm() {
             disabled={sending}
             className="btn-gold mt-2 w-full disabled:opacity-60"
           >
-            {sending ? "Sending…" : "Reserve My Stand"}
+            {sending ? "Sending…" : "Contact Us"}
           </button>
         </form>
       </div>
