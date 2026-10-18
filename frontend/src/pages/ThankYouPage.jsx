@@ -30,7 +30,7 @@ const NOTES = [
 
 export default function ThankYouPage() {
   return (
-    <LegalLayout eyebrow="Order confirmed" title="You're in. Let's get you collecting 5-star reviews." updated="" testid="thank-you-page">
+    <LegalLayout eyebrow="Order confirmed" title="You're in. Let's get you collecting 5-star reviews." updated="" testid="thank-you-page" noindex>
       <div className="flex items-center gap-4 rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-b from-[#12141C] to-[#0A0B0E] p-6 mb-14 -mt-6">
         <span className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#F3E5AB] via-[#D4AF37] to-[#996515] text-[#0A0B0E] flex items-center justify-center shrink-0">
           <CheckCircle2 size={24} aria-hidden="true" />

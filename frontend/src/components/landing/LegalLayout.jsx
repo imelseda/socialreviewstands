@@ -2,10 +2,16 @@ import { useEffect } from "react";
 import { Nfc, ArrowLeft } from "lucide-react";
 import Footer from "./Footer";
 
-export default function LegalLayout({ eyebrow, title, updated, children, testid }) {
+export default function LegalLayout({ eyebrow, title, updated, children, testid, noindex }) {
   useEffect(() => {
     document.title = `${title} | Social Media Review Stands`;
-  }, [title]);
+    const robotsMeta = document.querySelector('meta[name="robots"]');
+    const previous = robotsMeta?.getAttribute("content");
+    if (noindex && robotsMeta) robotsMeta.setAttribute("content", "noindex, nofollow");
+    return () => {
+      if (robotsMeta && previous) robotsMeta.setAttribute("content", previous);
+    };
+  }, [title, noindex]);
 
   return (
     <div className="min-h-screen bg-[#0A0B0E] text-[#F8F9FA]">

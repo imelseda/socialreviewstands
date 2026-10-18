@@ -130,3 +130,11 @@ User direction: competitor analysis (tapfivestars.com, shop.tapfive.com, TAPro l
 - Added frontend/public/.htaccess (Apache SPA rewrite → index.html) — REQUIRED or /privacy, /terms, /thank-you 404 on direct load (Stripe redirects buyers to /thank-you!). Verified it lands in build/ after yarn build.
 - WARNING: OrderForm ("Reserve My Stand") posts to REACT_APP_BACKEND_URL = Emergent preview backend, which can sleep/change — on HostGator there is no FastAPI backend. Needs a permanent fix (Formspree or HostGator PHP mail script) if the form should keep working long-term.
 - Deployment workflow going forward: yarn build → upload frontend/build contents (including hidden .htaccess) to HostGator public_html
+
+## Iteration: Thank-you page de-indexing + final export prep (2026-10-18)
+- Thank-you page now renders <meta name="robots" content="noindex, nofollow"> via LegalLayout noindex prop (client-side; restores index,follow on other pages)
+- Deliberately NOT blocked in robots.txt — a Disallow would prevent Google from ever seeing the noindex tag (robots.txt controls crawling, not indexing)
+- Removed /thank-you from sitemap.xml (now only /, /privacy, /terms); no internal links point to /thank-you
+- Verified rendered: thank-you=noindex,nofollow; home/privacy=index,follow
+- Final export built at frontend/build: includes .htaccess, robots.txt, sitemap.xml (no thank-you), GA tag G-5K11LQ7JTH — ALL CHECKS PASSED
+- User uploads frontend/build contents (incl. hidden .htaccess) to HostGator public_html
