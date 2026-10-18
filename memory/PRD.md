@@ -177,3 +177,7 @@ User direction: competitor analysis (three competitor listings) → full copy re
 - FOUND + FIXED: solution-bar-scene.png (How It Works section) visibly had the old brand name printed on the stand — replaced with tap-review-done.png infographic (brand-free, matches "Tap. Review. Done." heading), old image deleted
 - Final scan: ZERO matches for the old brand/domain anywhere in /app excluding .git history; build regenerated clean
 - USER TODO: (1) re-upload fresh build to HostGator AND delete tapfive-review-theme.zip + images/solution-bar-scene.png from the server (deletions don't propagate via upload); (2) delete the OLD GitHub repo imelseda/[old-repo-removed] — it still publicly hosts the old-branded codebase; (3) git history in current repo still contains old brand in past commits (harmless in practice; full purge requires history rewrite — ask if wanted)
+
+## Iteration: GitHub push #4 (2026-10-18)
+- Pushed main @ 73abc48 (auto-reply email + full old-brand purge) to imelseda/socialreviewstands — reused the earlier classic PAT (repo scope)
+- Verified: remote HEAD = local, no token stored locally
