@@ -222,3 +222,7 @@ User direction: competitor analysis (three competitor listings) → full copy re
 - New AI featured image (black/gold, 1200x675) with keyword alt text
 - Programmatically verified: 3 posts, no self-links, keyword counts 6/4/6, sitemap auto-included new post via generate-sitemap.mjs (zero manual sitemap edits)
 - Build passed; testing_agent iteration_2 still valid for blog framework (13/13)
+
+## Iteration: GitHub push #6 (2026-10-25)
+- Pushed main @ 72ea798 (blog feature, 3 posts with three-way cross-linking, auto-sitemap) via saved GITHUB_TOKEN (quotes stripped at read-time)
+- Verified remote HEAD = local
