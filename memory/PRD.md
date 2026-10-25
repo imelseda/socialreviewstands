@@ -197,3 +197,8 @@ User direction: competitor analysis (three competitor listings) → full copy re
 - sitemap.xml: added video:video namespace + full video entry on homepage (thumbnail, title, description, content_loc, duration 30s, publication date)
 - Verified: toggle on/off works, playback continues, XML valid, audio streams present in build
 - USER TODO: re-upload fresh build (videos grew slightly with audio; sitemap.xml changed — resubmit sitemap in Search Console optional but recommended)
+
+## Iteration: GitHub push #5 (2026-10-25)
+- Pushed main @ b1582d0 (hero video + sound toggle + video sitemap) to imelseda/socialreviewstands
+- Token collected via secure secrets card (GITHUB_TOKEN in backend/.env) — chat-pasted tokens are now auto-masked; token was saved with wrapping quotes which broke auth, stripped quotes at read-time
+- Verified: remote HEAD = local; user to revoke temp token on GitHub when done
