@@ -31,12 +31,11 @@ const HeroVideo = ({ testid, className }) => {
     <div className="relative rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
       <video
         ref={videoRef}
-        poster="/images/hero-cafe.jpg"
         autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
         title="Social Media Review Stands — see the NFC Google review stand in action"
         aria-label="Video showing how social media review stands work: a customer taps the NFC stand with their phone and the Google review page opens instantly — no apps, no searching, no monthly fees"

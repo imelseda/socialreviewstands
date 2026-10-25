@@ -202,3 +202,8 @@ User direction: competitor analysis (three competitor listings) → full copy re
 - Pushed main @ b1582d0 (hero video + sound toggle + video sitemap) to imelseda/socialreviewstands
 - Token collected via secure secrets card (GITHUB_TOKEN in backend/.env) — chat-pasted tokens are now auto-masked; token was saved with wrapping quotes which broke auth, stripped quotes at read-time
 - Verified: remote HEAD = local; user to revoke temp token on GitHub when done
+
+## Iteration: Hero poster removed (2026-10-25)
+- User reported poster→video swap delay on refresh; removed poster attribute from HeroVideo entirely and switched preload to "auto" (video buffers immediately)
+- hero-cafe.jpg kept on disk ONLY for invisible SEO metadata (sitemap video thumbnail_loc + VideoObject thumbnailUrl) — no longer rendered anywhere on the page
+- Verified: no poster attr in DOM, video playing from first paint, sound toggle intact
