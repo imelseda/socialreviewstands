@@ -181,3 +181,12 @@ User direction: competitor analysis (three competitor listings) → full copy re
 ## Iteration: GitHub push #4 (2026-10-18)
 - Pushed main @ 73abc48 (auto-reply email + full old-brand purge) to imelseda/socialreviewstands — reused the earlier classic PAT (repo scope)
 - Verified: remote HEAD = local, no token stored locally
+
+## Iteration: Hero video replaces café image (2026-10-25)
+- User-supplied 30s branded video (1280x720) now plays in hero (desktop + mobile), replacing static hero-cafe.jpg
+- Compressed 28.6MB → 2.7MB MP4 (H.264, CRF 28, audio stripped, faststart) + 3.7MB WebM/VP9 fallback; original kept out of repo
+- HeroVideo component: muted/loop/playsInline autoplay with ref + onCanPlay play() nudges, poster=hero-cafe.jpg, title + aria-label SEO text; <source> mp4+webm
+- Video SEO: VideoObject JSON-LD added to index.html (5th structured block — name, description, thumbnail, duration PT30S, contentUrl) + og:video meta tags
+- GOTCHA SOLVED: Playwright/test Chromium lacks H.264 — "element has no supported sources" was codec, not code; WebM fallback fixed it. Real browsers play the MP4.
+- Verified: autoplay confirmed running (currentTime advancing), poster fallback, mobile + desktop render
+- USER TODO: re-upload fresh build to HostGator (includes new /videos files)

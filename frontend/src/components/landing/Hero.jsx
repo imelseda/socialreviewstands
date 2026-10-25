@@ -15,14 +15,25 @@ const STATS = [
   { icon: Ban, value: "$0", label: "monthly fees — ever" },
 ];
 
-const HeroImage = ({ testid, className }) => (
+const HeroVideo = ({ testid, className }) => (
   <div className="rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
-    <img
-      src="/images/hero-cafe.jpg"
-      alt="Customer tapping a phone on a social media review stand at a café counter — the NFC 215 Google review stand that collects 5-star reviews and social media followers with one tap"
+    <video
+      poster="/images/hero-cafe.jpg"
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      ref={(el) => { if (el) el.play().catch(() => {}); }}
+      onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
+      title="Social Media Review Stands — see the NFC Google review stand in action"
+      aria-label="Video showing how social media review stands work: a customer taps the NFC stand with their phone and the Google review page opens instantly — no apps, no searching, no monthly fees"
       data-testid={testid}
       className={`w-full object-cover ${className}`}
-    />
+    >
+      <source src="/videos/hero-video.mp4" type="video/mp4" />
+      <source src="/videos/hero-video.webm" type="video/webm" />
+    </video>
   </div>
 );
 
@@ -57,7 +68,7 @@ export default function Hero() {
             Asking for Google reviews is awkward — and customers who promise to leave one forget the second they walk out. Our social media review stands put your Google review page or your social media channel one tap away, right on your counter. No apps. No searching. No monthly fees.
           </motion.p>
           <motion.div {...fadeUp(0.25)} className="lg:hidden mb-10">
-            <HeroImage testid="hero-product-image-mobile" className="max-h-[60vh]" />
+            <HeroVideo testid="hero-video-mobile" className="max-h-[60vh]" />
           </motion.div>
           <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-4 mb-5">
             <a data-testid="hero-order-button" href="#shop" className="btn-gold">
@@ -89,7 +100,7 @@ export default function Hero() {
           className="relative hidden lg:block"
           style={{ y: mediaY }}
         >
-          <HeroImage testid="hero-product-image" className="max-h-[70vh]" />
+          <HeroVideo testid="hero-video" className="max-h-[70vh]" />
         </motion.div>
       </div>
     </section>
