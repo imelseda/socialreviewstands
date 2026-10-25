@@ -190,3 +190,10 @@ User direction: competitor analysis (three competitor listings) → full copy re
 - GOTCHA SOLVED: Playwright/test Chromium lacks H.264 — "element has no supported sources" was codec, not code; WebM fallback fixed it. Real browsers play the MP4.
 - Verified: autoplay confirmed running (currentTime advancing), poster fallback, mobile + desktop render
 - USER TODO: re-upload fresh build to HostGator (includes new /videos files)
+
+## Iteration: Hero video sound toggle + video sitemap (2026-10-25)
+- Re-encoded hero videos WITH audio (MP4 AAC 96k 3.1MB / WebM Opus 4.1MB) — first compression had stripped audio, so sound button would have had nothing to play
+- HeroVideo: "Tap for sound" / "Sound on" pill button (bottom-right, gold-on-black, VolumeX/Volume2 icons); toggling unmutes and resumes playback (user gesture satisfies autoplay policy); unique testids per instance (hero-video-sound-toggle / hero-video-mobile-sound-toggle)
+- sitemap.xml: added video:video namespace + full video entry on homepage (thumbnail, title, description, content_loc, duration 30s, publication date)
+- Verified: toggle on/off works, playback continues, XML valid, audio streams present in build
+- USER TODO: re-upload fresh build (videos grew slightly with audio; sitemap.xml changed — resubmit sitemap in Search Console optional but recommended)

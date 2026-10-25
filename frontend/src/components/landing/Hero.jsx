@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import { Star, Ban, Timer } from "lucide-react";
+import { useRef, useState } from "react";
+import { Star, Ban, Timer, Volume2, VolumeX } from "lucide-react";
 import SoldTodayBadge from "./SoldTodayBadge";
 
 const fadeUp = (delay = 0) => ({
@@ -15,27 +15,50 @@ const STATS = [
   { icon: Ban, value: "$0", label: "monthly fees — ever" },
 ];
 
-const HeroVideo = ({ testid, className }) => (
-  <div className="rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
-    <video
-      poster="/images/hero-cafe.jpg"
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      ref={(el) => { if (el) el.play().catch(() => {}); }}
-      onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
-      title="Social Media Review Stands — see the NFC Google review stand in action"
-      aria-label="Video showing how social media review stands work: a customer taps the NFC stand with their phone and the Google review page opens instantly — no apps, no searching, no monthly fees"
-      data-testid={testid}
-      className={`w-full object-cover ${className}`}
-    >
-      <source src="/videos/hero-video.mp4" type="video/mp4" />
-      <source src="/videos/hero-video.webm" type="video/webm" />
-    </video>
-  </div>
-);
+const HeroVideo = ({ testid, className }) => {
+  const [muted, setMuted] = useState(true);
+  const videoRef = useRef(null);
+
+  const toggleSound = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !muted;
+    setMuted(!muted);
+    if (v.paused) v.play().catch(() => {});
+  };
+
+  return (
+    <div className="relative rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
+      <video
+        ref={videoRef}
+        poster="/images/hero-cafe.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
+        title="Social Media Review Stands — see the NFC Google review stand in action"
+        aria-label="Video showing how social media review stands work: a customer taps the NFC stand with their phone and the Google review page opens instantly — no apps, no searching, no monthly fees"
+        data-testid={testid}
+        className={`w-full object-cover ${className}`}
+      >
+        <source src="/videos/hero-video.mp4" type="video/mp4" />
+        <source src="/videos/hero-video.webm" type="video/webm" />
+      </video>
+      <button
+        type="button"
+        onClick={toggleSound}
+        data-testid={`${testid}-sound-toggle`}
+        aria-label={muted ? "Turn sound on" : "Turn sound off"}
+        className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-[#0A0B0E]/80 backdrop-blur-md border border-[#D4AF37]/40 px-4 py-2 text-xs font-semibold text-[#F3E5AB] tracking-wide transition-colors hover:bg-[#0A0B0E] hover:border-[#D4AF37]"
+      >
+        {muted ? <VolumeX size={15} aria-hidden="true" /> : <Volume2 size={15} aria-hidden="true" />}
+        {muted ? "Tap for sound" : "Sound on"}
+      </button>
+    </div>
+  );
+};
 
 export default function Hero() {
   const heroRef = useRef(null);
