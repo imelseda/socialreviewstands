@@ -5,6 +5,9 @@ export const SITE_DOMAIN = DOMAIN;
 export const DEFAULT_TITLE = "Social Media Review Stands — Google Review NFC Stand | More Reviews and Followers. Zero Effort.";
 export const DEFAULT_DESCRIPTION = "Social media review stands that turn counter visits into 5-star Google reviews and new followers — automatically. NFC tap + QR scan, no apps, no monthly fees.";
 
+export const formatDate = (iso) =>
+  new Date(`${iso}T00:00:00`).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+
 export const upsertMeta = (key, content, isProperty = false) => {
   const attr = isProperty ? "property" : "name";
   let el = document.head.querySelector(`meta[${attr}="${key}"]`);

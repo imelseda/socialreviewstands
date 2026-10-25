@@ -207,3 +207,11 @@ User direction: competitor analysis (three competitor listings) → full copy re
 - User reported poster→video swap delay on refresh; removed poster attribute from HeroVideo entirely and switched preload to "auto" (video buffers immediately)
 - hero-cafe.jpg kept on disk ONLY for invisible SEO metadata (sitemap video thumbnail_loc + VideoObject thumbnailUrl) — no longer rendered anywhere on the page
 - Verified: no poster attr in DOM, video playing from first paint, sound toggle intact
+
+## Iteration: Blog feature (2026-10-25)
+- /blog index + /blog/:slug post pages (BlogIndex.jsx, BlogPost.jsx, seo.js helpers); routes added; Navbar (route-aware section links) + Footer Blog links; hash-scroll effect in Landing for inbound /#shop links
+- 2 posts in src/data/blogPosts.json (single source of truth): "Setting Up Google Business Profile" (keyword 5x) + "7 Ways to Increase Followers on Social Media for My Business" (keyword 3x); cross-linked with keyword anchors both directions; BlogPosting JSON-LD per post; per-post title/meta/canonical/og with cleanup on unmount; CTA block → /#shop; related-posts section
+- Featured images AI-generated via Gemini (gemini-3.1-flash-image-preview, Emergent key), brand black/gold style, 1200x675, saved to public/images/blog/ with keyword alt text; script at /app/scripts/gen_blog_images.py
+- AUTO SITEMAP: scripts/generate-sitemap.mjs reads blogPosts.json + static routes → writes public/sitemap.xml on prebuild AND prestart — new posts never need manual sitemap edits (still excludes noindex /thank-you)
+- testing_agent iteration_2.json: 13/13 PASS; fixed flagged typo + ISO date formatting (formatDate helper)
+- USER TODO: upload fresh build to HostGator; resubmit sitemap in Search Console; EMERGENT_LLM_KEY added to backend/.env (used for image gen)

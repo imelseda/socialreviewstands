@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Clock3, CalendarDays, User } from "lucide-react"
 import Navbar from "../../components/landing/Navbar";
 import Footer from "../../components/landing/Footer";
 import posts from "../../data/blogPosts.json";
-import { upsertMeta, upsertCanonical, injectJsonLd, removeJsonLd, SITE_DOMAIN, DEFAULT_TITLE, DEFAULT_DESCRIPTION } from "./seo";
+import { upsertMeta, upsertCanonical, injectJsonLd, removeJsonLd, SITE_DOMAIN, DEFAULT_TITLE, DEFAULT_DESCRIPTION, formatDate } from "./seo";
 
 // Renders **bold** and [link text](url) inside paragraph text.
 function InlineText({ text }) {
@@ -105,7 +105,7 @@ export default function BlogPost() {
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-xs text-[#94A3B8] mb-8">
             <span className="flex items-center gap-1.5"><User size={13} aria-hidden="true" />{post.author}</span>
-            <span className="flex items-center gap-1.5"><CalendarDays size={13} aria-hidden="true" />{post.date}</span>
+            <span className="flex items-center gap-1.5"><CalendarDays size={13} aria-hidden="true" />{formatDate(post.date)}</span>
             <span className="flex items-center gap-1.5"><Clock3 size={13} aria-hidden="true" />{post.readTime}</span>
           </div>
 

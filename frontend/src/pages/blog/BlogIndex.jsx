@@ -4,7 +4,7 @@ import { ArrowRight, Clock3, CalendarDays } from "lucide-react";
 import Navbar from "../../components/landing/Navbar";
 import Footer from "../../components/landing/Footer";
 import posts from "../../data/blogPosts.json";
-import { upsertMeta, upsertCanonical, SITE_DOMAIN, DEFAULT_TITLE, DEFAULT_DESCRIPTION } from "./seo";
+import { upsertMeta, upsertCanonical, SITE_DOMAIN, DEFAULT_TITLE, DEFAULT_DESCRIPTION, formatDate } from "./seo";
 
 export default function BlogIndex() {
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function BlogIndex() {
                 </div>
                 <div className="p-7">
                   <div className="flex items-center gap-4 text-xs text-[#94A3B8] mb-3">
-                    <span className="flex items-center gap-1.5"><CalendarDays size={13} aria-hidden="true" />{post.date}</span>
+                    <span className="flex items-center gap-1.5"><CalendarDays size={13} aria-hidden="true" />{formatDate(post.date)}</span>
                     <span className="flex items-center gap-1.5"><Clock3 size={13} aria-hidden="true" />{post.readTime}</span>
                   </div>
                   <h2 className="font-display text-xl font-bold tracking-tight mb-3 group-hover:text-[#F3E5AB] transition-colors">
