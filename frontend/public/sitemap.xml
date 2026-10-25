@@ -16,6 +16,11 @@
     </video:video>
   </url>
   <url>
+    <loc>https://socialreviewstands.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://socialreviewstands.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
@@ -24,5 +29,17 @@
     <loc>https://socialreviewstands.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://socialreviewstands.com/blog/setting-up-google-business-profile</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://socialreviewstands.com/blog/increase-followers-social-media-business</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-10-25</lastmod>
   </url>
 </urlset>

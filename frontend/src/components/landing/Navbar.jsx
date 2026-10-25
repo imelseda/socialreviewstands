@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Nfc, Menu, X } from "lucide-react";
 
 const LINKS = [
@@ -6,15 +7,19 @@ const LINKS = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "Pricing", href: "#shop" },
   { label: "Reviews", href: "#reviews" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const prefix = pathname === "/" ? "" : "/";
+  const resolve = (href) => (href.startsWith("#") ? prefix + href : href);
   return (
     <header data-testid="site-header" className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-[#0B0C10]/80 border-b border-[#C5A059]/20">
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" data-testid="nav-logo" className="flex items-center gap-2.5 font-display font-bold text-lg tracking-tight text-[#F8F9FA]">
+        <a href={pathname === "/" ? "#top" : "/"} data-testid="nav-logo" className="flex items-center gap-2.5 font-display font-bold text-lg tracking-tight text-[#F8F9FA]">
           <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#F3E5AB] via-[#D4AF37] to-[#996515] text-[#0A0B0E] flex items-center justify-center shadow-[0_4px_16px_rgba(212,175,55,0.4)]">
             <Nfc size={20} aria-hidden="true" />
           </span>
@@ -24,14 +29,14 @@ export default function Navbar() {
           {LINKS.map((l) => (
             <a
               key={l.href}
-              data-testid={`nav-link-${l.href.slice(1)}`}
-              href={l.href}
+              data-testid={`nav-link-${l.href.replace(/^[#/]+/, "")}`}
+              href={resolve(l.href)}
               className="text-sm font-medium text-[#94A3B8] hover:text-[#F3E5AB] transition-colors duration-200"
             >
               {l.label}
             </a>
           ))}
-          <a data-testid="nav-order-button" href="#order" className="btn-gold !px-5 !py-2.5 text-sm">
+          <a data-testid="nav-order-button" href={resolve("#order")} className="btn-gold !px-5 !py-2.5 text-sm">
             Get Your Stand
           </a>
         </div>
@@ -49,15 +54,15 @@ export default function Navbar() {
           {LINKS.map((l) => (
             <a
               key={l.href}
-              data-testid={`nav-mobile-link-${l.href.slice(1)}`}
-              href={l.href}
+              data-testid={`nav-mobile-link-${l.href.replace(/^[#/]+/, "")}`}
+              href={resolve(l.href)}
               onClick={() => setOpen(false)}
               className="text-sm font-medium text-[#94A3B8]"
             >
               {l.label}
             </a>
           ))}
-          <a data-testid="nav-mobile-order-button" href="#order" onClick={() => setOpen(false)} className="btn-gold !py-2.5 text-sm justify-center">
+          <a data-testid="nav-mobile-order-button" href={resolve("#order")} onClick={() => setOpen(false)} className="btn-gold !py-2.5 text-sm justify-center">
             Get Your Stand
           </a>
         </div>

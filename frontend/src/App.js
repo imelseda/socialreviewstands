@@ -6,6 +6,8 @@ import Lenis from "lenis";
 import PrivacyPage from "@/pages/PrivacyPage";
 import TermsPage from "@/pages/TermsPage";
 import ThankYouPage from "@/pages/ThankYouPage";
+import BlogIndex from "@/pages/blog/BlogIndex";
+import BlogPost from "@/pages/blog/BlogPost";
 import Marquee from "@/components/landing/Marquee";
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
@@ -33,6 +35,13 @@ function Landing() {
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
+
+    // Support inbound hash links (e.g. /#shop from blog posts)
+    if (window.location.hash) {
+      setTimeout(() => {
+        document.querySelector(window.location.hash)?.scrollIntoView({ behavior: "smooth" });
+      }, 400);
+    }
 
     const onClick = (e) => {
       const a = e.target.closest('a[href^="#"]');
@@ -82,6 +91,8 @@ function App() {
       <Toaster position="top-center" richColors theme="dark" />
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
