@@ -215,3 +215,10 @@ User direction: competitor analysis (three competitor listings) → full copy re
 - AUTO SITEMAP: scripts/generate-sitemap.mjs reads blogPosts.json + static routes → writes public/sitemap.xml on prebuild AND prestart — new posts never need manual sitemap edits (still excludes noindex /thank-you)
 - testing_agent iteration_2.json: 13/13 PASS; fixed flagged typo + ISO date formatting (formatDate helper)
 - USER TODO: upload fresh build to HostGator; resubmit sitemap in Search Console; EMERGENT_LLM_KEY added to backend/.env (used for image gen)
+
+## Iteration: Blog post #3 + three-way cross-linking (2026-10-25)
+- New post: "Google Rate My Business: Why Customers Can't Find Where to Review You" (slug: google-rate-my-business) — keyword "google rate my business" in title + 6× in body; also covers write-a-google-review and my-google-reviews-history keywords
+- Three-way cross-linking complete: every post now in-content links to BOTH other posts with keyword anchors (post1↔post2, post1↔post3, post2↔post3); "Keep reading" related section auto-shows both siblings
+- New AI featured image (black/gold, 1200x675) with keyword alt text
+- Programmatically verified: 3 posts, no self-links, keyword counts 6/4/6, sitemap auto-included new post via generate-sitemap.mjs (zero manual sitemap edits)
+- Build passed; testing_agent iteration_2 still valid for blog framework (13/13)
