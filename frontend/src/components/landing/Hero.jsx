@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { Star, Ban, Timer, Volume2, VolumeX } from "lucide-react";
 import SoldTodayBadge from "./SoldTodayBadge";
@@ -61,13 +61,12 @@ const HeroVideo = ({ testid, className }) => {
 
 export default function Hero() {
   const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const mediaY = useTransform(scrollYProgress, [0, 1], [-70, 20]);
 
   return (
     <section id="top" ref={heroRef} className="relative overflow-hidden metallic-bg pt-32 pb-24 lg:pt-40 lg:pb-28">
       <div className="noise-overlay" aria-hidden="true" />
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start relative">
+        {/* Left Column */}
         <div>
           <motion.p {...fadeUp(0)} data-testid="hero-overline" className="text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] mb-6">
             NFC + QR · Google Review Stand · Model 215
@@ -103,7 +102,27 @@ export default function Hero() {
           <motion.div {...fadeUp(0.35)} className="mb-10">
             <SoldTodayBadge />
           </motion.div>
-          <motion.div {...fadeUp(0.4)} data-testid="hero-stats" className="grid grid-cols-3 gap-6 max-w-lg border-t border-[#D4AF37]/15 pt-8">
+        </div>
+
+        {/* Right Column: Frozen video position with stats lowered further down */}
+        <div className="hidden lg:block pt-24">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            className="relative"
+          >
+            <HeroVideo testid="hero-video" className="max-h-[70vh]" />
+          </motion.div>
+
+          {/* Increased gap from mt-8 to mt-16 to push the stats down by ~50px */}
+          <motion.div 
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            data-testid="hero-stats" 
+            className="grid grid-cols-3 gap-5 mt-16 pt-7 border-t border-[#D4AF37]/15"
+          >
             {STATS.map((s) => (
               <div key={s.value} data-testid={`hero-stat-${s.value.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}`}>
                 <div className="flex items-center gap-2 mb-1.5">
@@ -115,15 +134,6 @@ export default function Hero() {
             ))}
           </motion.div>
         </div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="relative hidden lg:block"
-          style={{ y: mediaY }}
-        >
-          <HeroVideo testid="hero-video" className="max-h-[70vh]" />
-        </motion.div>
       </div>
     </section>
   );
